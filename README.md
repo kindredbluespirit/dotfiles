@@ -22,8 +22,6 @@ setup-appimages
 setup-home
 ```
 
-Skipping every setup script above, you can just run `setup-home`.
-
 ### Notes
 git ssh url alias -\
 ssh://host\<rest-of-the-url\>\

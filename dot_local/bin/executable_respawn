@@ -1,0 +1,21 @@
+#!/usr/bin/env zsh
+
+## There are three names corresponding to a process command (ulauncher --hide-window --no-window-shadow)
+## 1. process name - ulauncher
+## 2. commandline name - <the-exact-command-that-was-typed>  
+## 3. full commandline name - `pyenv which pyenv` `pyenv which ulauncher` --hide-window --no-window-shadow
+## Use number 3 with respawn. pgrep -fa <number-1> should help find it.
+
+# argstring=`print $@`
+argstring=${(j[ ])@}
+print -l $argstring
+
+# killall -u `whoami` -s TERM $1
+pkill -U `whoami` --signal TERM -fx $argstring
+
+# while [[ -n `pidof $1` ]]; do
+#     sleep 0.1
+# done
+
+pwait -fx $argstring
+$@ 1>/dev/null 2>&1 &

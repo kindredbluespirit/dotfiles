@@ -1,0 +1,95 @@
+#!/usr/bin/env zsh
+
+## taken from /etc/X11/xinit/xinitrc #####################################################################
+
+userresources=$HOME/.Xresources
+usermodmap=$HOME/.Xmodmap
+sysresources=/etc/X11/xinit/.Xresources
+sysmodmap=/etc/X11/xinit/.Xmodmap
+
+## merge in defaults and keymaps
+[ -f $sysresources ] && xrdb -merge $sysresources
+[ -f $sysmodmap ] && xmodmap $sysmodmap
+[ -f "$userresources" ] && xrdb -merge "$userresources"
+[ -f "$usermodmap" ] && xmodmap "$usermodmap"
+
+## start some nice programs
+[ -d /etc/X11/xinit/xinitrc.d ] && {
+    for f in /etc/X11/xinit/xinitrc.d/?*.sh
+    do [ -x "$f" ] && . "$f"
+    done
+    unset f
+}
+
+## taken from startlxqt #######################################################################
+
+contains() {
+    local str="$1" substr="$2"
+    [ "$str" = "$substr" -o -z "${str##$substr:*}" -o -z "${str##*:$substr:*}" -o -z "${str%%*:$substr}" ]
+}
+
+[ -z "$XDG_DATA_DIRS" ] && XDG_DATA_DIRS="$XDG_DATA_HOME:/usr/local/share:/usr/share" || {
+    ! contains "$XDG_DATA_DIRS" "/usr/share" && XDG_DATA_DIRS="$XDG_DATA_DIRS:/usr/share"
+} && export XDG_DATA_DIRS
+
+[ -z "$XDG_CONFIG_DIRS" ] && XDG_CONFIG_DIRS="/etc:/etc/xdg:/usr/share" || {
+    ! contains "$XDG_CONFIG_DIRS" '/etc/xdg' && XDG_CONFIG_DIRS="$XDG_CONFIG_DIRS:/etc/xdg"
+} && export XDG_CONFIG_DIRS
+
+[ -z "$XDG_CACHE_HOME" ] && export XDG_CACHE_HOME="$HOME/.cache"
+
+unfunction contains
+
+## Clean up after GDM (GDM sets the number of desktops to one)
+# xprop -root -remove _NET_NUMBER_OF_DESKTOPS -remove _NET_DESKTOP_NAMES -remove _NET_CURRENT_DESKTOP 2> /dev/null
+
+## Launch DBus if needed
+# if [ -z "$DBUS_SESSION_BUS_ADDRESS" ]; then
+#     if [ -z "$XDG_RUNTIME_DIR" ] || ! [ -S "$XDG_RUNTIME_DIR/bus" ] || ! [ -O "$XDG_RUNTIME_DIR/bus" ]; then
+#         eval "$(dbus-launch --sh-syntax --exit-with-session)" || echo "startlxqt: error executing dbus-launch" >&2
+#     fi
+# fi
+
+# Qt4 platform plugin
+export QT_PLATFORM_PLUGIN=lxqt
+
+# Qt5 platform plugin
+export QT_QPA_PLATFORMTHEME=lxqt
+
+# use lxqt-applications.menu for main app menu
+export XDG_MENU_PREFIX="lxqt-"
+
+export XDG_CURRENT_DESKTOP="LXQt"
+
+## Start the LXQt session
+# lxqt-session
+
+## end of the taken part ################################################################################
+
+## plank needs this
+export XDG_SESSION_TYPE=x11
+
+## start the window manager
+# compiz &
+# awesome & respawn sxhkd $XDG_CONFIG_HOME/sxhkd/awesome.sxhkdrc
+# cutefish-session &
+# gala &
+# jwm &
+# mutter &
+# DESKTOP_SESSION=plasma startplasma-x11 &
+# fvwm &
+# 2bwm &
+# xfwm4 &
+# respawn berry
+# bspwm & respawn sxhkd $XDG_CONFIG_HOME/sxhkd/bspwm.sxhkdrc
+openbox &
+# fluxbox --rc $XDG_CONFIG_HOME/fluxbox/config &
+# pekwm --config $XDG_CONFIG_HOME/pekwm/config &
+# icewm &
+# dwm &
+# herbstluftwm &
+
+## start companion programs
+wm-startup
+
+sleep infinity

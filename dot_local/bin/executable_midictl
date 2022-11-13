@@ -1,0 +1,18 @@
+#!/usr/bin/env zsh
+
+MIDI_OUTPUT_PORT="Midi Through Port-0"
+MIDI_OCTAVE=4
+
+if [[ $1 == "on" || $1 == "off" ]] then
+offset=$2
+note=$(( ($MIDI_OCTAVE+2)*12 + $offset ))
+subcmd="$1 $note 100"
+elif [[ $1 == "panic" ]] then
+subcmd="panic"
+else
+exit 1
+fi
+
+cmd="sendmidi dev \"$MIDI_OUTPUT_PORT\" $subcmd"
+print $cmd
+eval $cmd

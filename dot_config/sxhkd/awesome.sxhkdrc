@@ -1,0 +1,7 @@
+# SHHKD_SHELL=/usr/bin/zsh
+
+super + shift + r
+    respawn awesome \
+        && respawn sxhkd $XDG_CONFIG_HOME/sxhkd/awesome.sxhkdrc \
+        && wm-startup
+	# awesome-client 'awesome.restart()' ; wm-startup

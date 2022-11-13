@@ -1,0 +1,60 @@
+#!/usr/bin/env zsh
+
+dock=(
+    # "cutefish-statusbar"
+    # "ukui-panel"
+    "tint2"
+    "tint2 -c $XDG_CONFIG_HOME/tint2/desktop-switcher.tint2rc"
+    # "polybar example"
+    # "conky"
+    # "lxqt-panel"
+    # "xfce4-panel"
+
+    ## cairo based docks aren't cooperating with window unmapping (or hiding)
+    # "plank"
+    # "cairo-dock -of"
+)
+
+state=/tmp/dock
+
+[[ -z $1 ]] && {
+    for p in $dock; do
+        print $p | read -A p # turn p into an array
+        respawn $p &
+    done
+    sleep 1
+    
+    # ## populate /tmp/xmap, or the dock cannot be toggled
+    # dock show
+    
+    print visible > $state
+
+    exit 0
+} || [[ $1 == kill ]] && {
+    for p in $dock; do
+        pkill $p
+    done
+
+    exit 0
+# } || [[ $1 == toggle ]] && {
+#     # ## all dock windows must share the same state
+#     # for p in $dock; do
+#     #     print $p | read p _ # first word/token in the string
+        
+#     #     case `cat /tmp/xmap/$p` in
+#     #         (visible) dock hide;;
+#     #         (hidden) dock show;;
+#     #     esac
+#     #     break
+#     # done
+
+#     case `cat $state` in
+#         (visible) dock hide;;
+#         (hidden) dock show;;        
+#     esac
+    
+#     exit 0
+} || {
+    new_state=`xmap $1 $dock`
+    print $new_state > $state
+}

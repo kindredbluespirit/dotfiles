@@ -1,0 +1,14 @@
+#!/usr/bin/env zsh
+
+respawn nm-applet
+## respawn lxqt-notificationd        # already in wm-startup
+respawn lxqt-powermanagement
+## respawn cbatticon
+respawn `pyenv which python` `which blueman-applet`
+respawn pa-applet
+## respawn volumeicon
+## respawn flameshot
+## respawn kdeconnect-indicator
+## respawn gnome-pie
+# respawn warpinator
+## respawn nitroshare

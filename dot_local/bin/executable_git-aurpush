@@ -1,0 +1,6 @@
+#!/usr/bin/env zsh
+
+makepkg --printsrcinfo > `git root`/.SRCINFO
+
+message=${1:-""}
+git minpush $message

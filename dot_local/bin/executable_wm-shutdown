@@ -1,0 +1,46 @@
+#!/usr/bin/env zsh
+
+## dock
+# pkill --signal HUP -x lxqt-panel
+# pkill tint2
+dock kill
+
+pkill plank
+pkill cairo
+
+pkill xss-lock
+
+pkill code-server
+pkill emacs
+
+pkill blueman
+
+pkill deadd
+
+# pkill matches every process containing the word
+pkill lxqt
+pkill xfce
+pkill dde
+pkill deepin
+pkill kde
+pkill baloo
+
+pkill xfconf
+
+## launcher daemons
+pkill ulauncher
+pkill albert
+pkill synapse
+
+pkill bspc # bspwm's float defaulting loop (see bspwmrc)
+
+pkill sxhkd
+
+## input methods
+pkill ibus
+pkill fcitx
+
+# pwarden -Rp xorg
+
+# Finally
+killall Xorg

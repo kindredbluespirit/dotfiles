@@ -1,0 +1,67 @@
+#!/bin/sh
+
+[-z $XDG_CACHE_HOME ] && XDG_CACHE_HOME=~/.cache/
+mkdir $XDG_CACHE_HOME
+
+[ -eq $1 1 ] && {
+    setup-zsh-deps
+    setup-appimages
+}
+
+## toolchains ########################################################
+
+## python, pyenv
+curl https://pyenv.run | bash
+
+## rust, rustup
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+## haskell, ghcup
+curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
+
+#######################################################
+
+## deno 
+curl -fsSL https://deno.land/x/install/install.sh | sh
+
+## download, extract and install
+dei() {
+    url=$1
+    v=$2
+    f=$3
+    d=$4
+    pushd $XDG_CACHE_HOME
+    wget $url
+    tar xvf $f
+    mv $d ~/.$d
+    popd
+}
+
+## go
+# pushd $XDG_CACHE_HOME
+# version=1.19.3.linux-amd64
+# f=go${version}.tar.gz
+# wget https://go.dev/dl/$f
+# tar xvzf $f
+# d=go
+# mv $d ~/.$d
+# popd
+dei https://go.dev/dl/go1.19.3.linux-amd64.tar.gz \
+    1.19.3.linux-amd64 \
+    go1.19.3.linux-amd64.tar.gz \
+    go
+
+
+## tor browser
+# pushd $XDG_CACHE_HOME
+# version=11.5.7
+# f=tor-browser-linux64-${version}_en-US.tar.xz
+# wget https://www.torproject.org/dist/torbrowser/$version/$f
+# tar xvf $f
+# d=tor-browser_en-US
+# mv $d ~/.$d
+# popd
+dei https://www.torproject.org/dist/torbrowser/11.5.7/tor-browser-linux64-11.5.7_en-US.tar.xz \
+    tor-browser-linux64-11.5.7_en-US.tar.xz \
+    11.5.7 \
+    tor-browser_en-US

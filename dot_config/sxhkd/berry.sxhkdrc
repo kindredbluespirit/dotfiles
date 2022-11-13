@@ -1,0 +1,22 @@
+# SHHKD_SHELL=/usr/bin/zsh
+
+# super + {0-9}
+#     berryc switch_workspace {0-9}
+
+# super + shift + {0-9}
+#     berryc send_to_workspace {0-9}
+
+# super + q
+#     berryc window_close
+
+# super + m
+#     berryc window_monocle
+
+# super + f
+#     berryc fullscreen
+
+# super + Tab
+#     berryc cycle_focus
+
+# ~button1
+#     berryc pointer_focus

@@ -1,0 +1,9 @@
+#!/usr/bin/env zsh
+
+OS=`sed "s/ //g" <(os)`
+DIRPATH=$XDG_DATA_HOME/logos
+pwd=`pwd`
+[[ $pwd != $DIRPATH ]] && pushd $DIRPATH > /dev/null
+FILENAME=`find -type f -iname "*${1:-$OS}*" -printf "%f\n" | head -n 1`
+[[ $pwd != $DIRPATH ]] && popd > /dev/null
+neofetch --chafa $DIRPATH/$FILENAME

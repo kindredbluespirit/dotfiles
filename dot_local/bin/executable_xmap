@@ -1,0 +1,57 @@
+#!/usr/bin/env zsh
+
+subcommands=(show hide toggle)
+(($subcommands[(Ie)$1])) || { # array $subcommands contains $1
+    print "usage: xmap {show | hide | toggle} client1 client2 .."
+    exit 1
+}
+
+[[ $# < 2 ]] && {
+    print "Not enough arguments" >&2
+    exit 2
+}
+
+tmp=/tmp/xmap
+[[ -d $tmp ]] || mkdir -p $tmp
+
+# get the collective state
+collective=
+p=${@:2}[1] # zsh arrays are 1-indexed
+# for p in ${@:2}; do
+print $p | read p _
+state=$tmp/$p
+[ -e $state ] && [[ `cat $state` == hidden ]] \
+    && collective=hidden \
+    || collective=visible
+#     break
+# done
+
+for p in ${@:2}; do (
+    print $p | read p _
+	state=$tmp/$p
+    # [ -z $state ] && print visible > $state
+    case $1 in
+		(show) xdotool search --sync --class $p windowmap %@ windowraise %@; print visible | tee $state;;
+		(hide) xdotool search --sync --class $p windowunmap %@; print hidden | tee $state;;
+		(toggle) {
+			case $collective in
+				# (visible) $0 hide $p 1>/dev/null;;
+				# (hidden) $0 show $p 1>/dev/null;;
+                (visible) $0 hide $p;;
+				(hidden) $0 show $p;;
+			esac
+		};;
+		(*) exit 5;;
+	esac
+)& done
+
+# [[ $1 == show ]] && {
+#     print visible
+#     exit 0
+# } || [[ $1 == hide ]] && {
+#     print hidden
+#     exit 0
+# } || [[ $1 == toggle ]] && {
+#     [[ $collective == visible ]] && print hidden || print visible
+#     exit 0
+# }

@@ -1,0 +1,6 @@
+#!/usr/bin/env -S deno run -A --cached-only
+
+let stdinBuffer = new TextDecoder().decode(await Deno.readAll(Deno.stdin))
+let obj = JSON.parse(stdinBuffer)
+let fullobj = Deno.inspect(obj, { depth : Infinity, colors : true })
+console.log(fullobj)

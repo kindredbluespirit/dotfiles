@@ -1,0 +1,9 @@
+#!/usr/bin/env zsh
+
+chmod -R $((777 - `umask`)) .
+[[ $1 == 1 ]] && chmod -R +x . || chmod -R -x+X .
+
+# # reference
+# chmod -R a+r .
+# chmod -R u+w,go-w .
+# chmod -R a-x+X .

@@ -1,0 +1,13 @@
+#!/usr/bin/env zsh
+
+# message=${@:-""}
+
+# without the "" around $message, "--allow-empty-message" becomes the argument to -m
+# git commit -am "$message" --allow-empty-message
+
+args=
+for message in $@
+do args=($args -m $message)
+done
+
+git commit --date="$(date --utc +%Y-%m-%dT%H:%M:%S%z)" -a --allow-empty-message ${args:--m ""}

@@ -1,0 +1,9 @@
+#!/usr/bin/env zsh
+
+exec 1>/dev/null 2>&1 # do not source file
+
+TOR_HOME=$HOME/.tor-browser_en-US
+
+pushd ${TOR_HOME:-$HOME/.tor-browser_en-US}
+./start-tor-browser.desktop
+popd

@@ -1,0 +1,4 @@
+#!/usr/bin/env zsh
+
+# mpv --no-demuxer-thread --untimed -vf=hflip /dev/video0
+mpv --profile=low-latency --untimed --vf=hflip /dev/video0

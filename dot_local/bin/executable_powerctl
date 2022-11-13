@@ -1,0 +1,9 @@
+#!/usr/bin/env zsh
+
+# # slock &
+# lock
+# sleep 1
+
+# systemctl $1
+
+echo "DO NOT USE THIS"

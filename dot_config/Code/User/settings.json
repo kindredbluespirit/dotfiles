@@ -1,0 +1,40 @@
+{
+    "window.menuBarVisibility": "toggle",
+    "editor.fontFamily": "'Noto Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "files.associations": {
+        "sxhkdrc": "shellscript",
+        "*zsh*": "shellscript",
+        "*.rasi": "scss",
+        "*.sxhkdrc": "shellscript"
+    },
+    "files.exclude": {
+        "**/.DS_Store": false,
+        "**/.git": false,
+        "**/.hg": false,
+        "**/.svn": false,
+        "**/CVS": false,
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "terminal.integrated.scrollback": 5000,
+    "editor.detectIndentation": false,
+    "workbench.enableExperiments": false,
+    "update.showReleaseNotes": false,
+    "update.mode": "none",
+    "json.schemaDownload.enable": false,
+    "extensions.autoUpdate": false,
+    "extensions.autoCheckUpdates": false,
+    "npm.fetchOnlinePackageInfo": false,
+    "workbench.settings.enableNaturalLanguageSearch": false,
+    "dart.debugExternalLibraries": false,
+    "dart.debugSdkLibraries": false,
+    "dart.allowAnalytics": false,
+    "mesonbuild.configureOnOpen": false,
+    "svelte.enable-ts-plugin": true,
+    "editor.renderWhitespace": "all",
+    "editor.renderControlCharacters": true,
+    "redhat.telemetry.enabled": false,
+    "cmake.configureOnOpen": false
+}

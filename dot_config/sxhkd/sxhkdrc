@@ -1,0 +1,93 @@
+# SXHKD_SHELL=/usr/bin/zsh
+
+## quit/restart the session
+super + shift + q
+	wm-shutdown
+super + r
+    wm-startup
+
+## insert {terminal emulator,receptacle}
+super + {_}Return
+	{sensible-terminal}
+
+## wallpaper (also fixes screen buffer glitches)
+super + w
+    wallpaper
+
+## program launcher
+ctrl + grave
+	rofi -show
+# super + toggle
+#     albert toggle
+
+super + space
+	dock toggle
+
+# super + {_,shift,alt} + e
+#	emacsclient -c --eval "({_,newsticker-show-news,fancy-startup-screen})"
+
+## webcam
+super + e
+    webcam
+
+## new code-server window
+# super + v
+#     xdg-open http://code.local
+
+## full screenshot
+Print
+    shotgun ~/Pictures/screenshots/shotgun_`date +%F_%T`.png
+    # scrot ~/Pictures/screenshots/%F_%T.png
+    # deepin-screenshot -f ~/Pictures/screenshots
+    # flameshot screen -p ~/Pictures/screenshots
+
+## active/focused window screenshot (obsolete, use the selection screenshot instead)
+# super + Print
+    # scrot -u ~/Pictures/screenshots/%F_%T.png
+    # deepin-screenshot -w ~/Pictures/screenshots
+
+## selected window/area screenshot
+super + Print
+    shotgun -g `hacksaw` ~/Pictures/screenshots/shotgun_`date +%F_%T`.png
+    # scrot -s ~/Pictures/screenshots/%F_%T.png
+    # flameshot gui -p ~/Pictures/screenshots
+    # deepin-screenshot -s ~/Pictures/screenshots
+    # lximage-qt --screenshot
+
+# audio
+XF86Audio{RaiseVolume,LowerVolume}
+	sound {+,-}
+XF86Audio{_,Mic}Mute
+	sound {m,M}
+
+## backlight
+XF86MonBrightness{Up,Down}
+	backlight {+,-}
+
+## leave lxqt session
+# super + shift + q
+#     lxqt-leave --logout
+
+## power shortcuts (previously powerctl, now xss-lock does what we need)
+super + shift + {l,h}
+	systemctl {suspend,hibernate}
+super + shift + {p,r}
+    {poweroff,reboot}
+
+## lock screen
+super + l
+	xset s activate # lock
+
+## turn the display off
+XF86Display
+	xset dpms force off
+
+## xclip
+super + c ; {0-9}
+    xclip -selection clipboard < $XDG_DATA_HOME/clipboard/{0-9}.txt
+
+## midi
+super + alt + {_,@}{a,w,s,e,d,f,t,g,y,h,u,j,k,o,l}
+    midictl {on,off} {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14}
+super + alt + BackSpace
+    midictl panic

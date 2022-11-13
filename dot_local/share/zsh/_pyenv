@@ -1,0 +1,12 @@
+# disregard this, look at $PYENV_ROOT/completions/pyenv.zsh instead
+
+_pyenv() {
+  local words completions
+  read -cA words
+
+  [[ ${#words} == 2 ]] \
+    && completions=$(pyenv commands) \
+    || completions=$(pyenv completions ${words[2,-2]})
+
+  reply=(${(ps:\n:)completions})
+}

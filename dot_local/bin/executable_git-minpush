@@ -1,0 +1,6 @@
+#!/usr/bin/env zsh
+
+git mincommit $@ # see git-mincommit
+
+local branch=`git rev-parse --abbrev-ref HEAD`
+git push -f origin $branch

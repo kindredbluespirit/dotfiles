@@ -1,0 +1,5 @@
+#compdef utilctl
+
+_utilctl() {
+    compadd - mountpoint device mount chroot unmount
+}

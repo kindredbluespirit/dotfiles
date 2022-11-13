@@ -1,0 +1,25 @@
+#!/usr/bin/env zsh
+
+# option=""
+# [[ $# == 5 ]] && {
+#     option=$1
+#     shift
+# }
+
+[[ $# < 5 ]] && {
+    print "Error: not enough arguments"
+    exit 1
+}
+
+[[ $1 == a ]] && audio="-x" || {
+    [[ $1 == v ]] && audio="" || {
+        print "Error: \$1 must be a or v"
+        exit 2
+    }
+}
+url=$2
+start=$3
+duration=$4
+output=$5
+
+ffmpeg $(yt-dlp $audio -g $url | sed "s/.*/-ss $start -i &/") -t $duration $output

@@ -1,0 +1,74 @@
+# SHHKD_SHELL=/usr/bin/zsh
+
+# preselect the direction
+super + {Left,Down,Up,Right}
+	bspc node -p \~{west,south,north,east}
+
+# swap the present desktop with the supplied one, the name order stays the same
+super + alt + {1-9,0}
+	bspc desktop --swap \^{1-9,10} && bspc monitor -d 1 2 3 4 5 6 7 8 9 0
+
+# insert {terminal emulator,receptacle}
+super + {shift +}Return
+	{bspc node --insert-receptacle}
+
+# send the focused node to the {preselected region,receptacle}
+super + {_,shift +}backslash
+	bspc node focused -n {newest.\!automatic,any.leaf.\!window} --follow
+
+## quit/restart bspwm and sxhkd
+super + shift + {r}
+	{bspc wm -r && wm-startup}
+
+# close window (node)
+super + q
+	bspc node -c || bspc node -k
+
+# switch between tiling/floating (inspired by i3)
+super + shift + space
+    if [ -z $(bspc query -N -n focused.floating) ]; \
+	then bspc node focused -t floating; \
+    else bspc node focused -t tiled; \
+    fi
+
+# toggle fullscreen layout
+super + f
+	bspc node focused -t \~fullscreen
+
+# focus the node in the given direction
+super + {control,shift} + {Left,Down,Up,Right}
+	bspc node -{f,s} {west,south,north,east}
+
+# focus the node for the given path jump
+super + {p,b,comma,period}
+	bspc node -f @{parent,brother,first,second}
+
+# focus the older or newer node in the focus history
+super + {o,i}
+	bspc wm -h off; \
+	bspc node {older,newer} -f; \
+	bspc wm -h on
+
+# focus or send to the given desktop
+super + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}'
+
+# rotate the parent of a leaf node (window/receptacle, I think), there is no such thing as rotating the leaf node itself
+super + {bracketleft,bracketright}
+	bspc node @parent -R {-90,90}
+
+# flip
+super + {semicolon,apostrophe}
+	bspc node -F {vertical,horizontal}
+
+# change window gap
+super + {minus,equal}
+	bspc config window_gap $((`bspc config window_gap` {-,+} 2 ))
+
+# reset window gap and padding
+super + BackSpace
+	bspc config window_gap 0 && \
+	bspc config left_padding 0 && \
+	bspc config bottom_padding 0 && \
+	bspc config top_padding 0 && \
+	bspc config right_padding 0

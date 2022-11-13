@@ -1,0 +1,122 @@
+#!/bin/sh
+
+## yay
+tempdir=~/.cache/tempdir-398282
+rm -rf $tempdir
+mkdir -p $tempdir
+pushd $tempdir
+git clone https://aur.archlinux.org/yay-bin
+pushd yay-bin
+makepkg -si
+popd
+popd
+rm -rf $tempdir
+
+## install packages using yay
+packages=(
+yay-bin
+zsh
+
+tar
+gzip
+unzip
+
+## handled by another setup script
+# grml-zsh-config
+# starship
+
+## pactree
+pacman-contrib
+
+kdeconnect
+
+mesa
+xf86-video-vesa
+xf86-video-intel
+xf86-video-amdgpu
+
+# pipewire
+pipewire-pulse
+# pulseaudio
+pavucontrol
+networkmanager
+blueman
+bluez
+bluez-utils
+
+xorg-xinit
+openbox
+bspwm
+sxhkd
+tint2
+oreo-cursors-git
+rofi
+
+fcitx5-im
+# fcitx5
+
+alacritty
+# lxqt-policykit
+# lxqt-powermanagement
+# lxqt-notificationd
+
+vscodium-bin
+# pcmanfm-qt
+brave-bin
+
+# warpinator
+# volumeicon
+# network-manager-applet
+# pa-applet
+
+gcc
+make
+
+wget
+
+chezmoi
+# qogir-icon-theme
+
+xdotool
+git
+opendoas
+
+fakeroot
+picom
+
+noto-fonts
+noto-fonts-extra
+noto-fonts-cjk
+noto-fonts-emoji
+fcitx5
+
+opendoas
+feh
+# lxqt-config
+
+emacs
+
+xss-lock
+physlock
+neovim
+mpv
+
+ttf-fork-awesome
+
+# pyenv
+# base-devel
+# lxqt
+lxdm
+xfce4
+
+ripgrep
+bat
+dust
+
+plank
+
+)
+
+## this is a bash array, not a zsh array
+print ${packages[@]}
+yay -S --noconfirm ${packages[@]}

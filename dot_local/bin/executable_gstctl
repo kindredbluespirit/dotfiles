@@ -1,0 +1,14 @@
+#!/bin/sh
+
+[[ $1 == cam ]] && {
+	[[ -z $2 ]] || [[ $2 == 0 ]] && gst-launch-1.0 v4l2src device=/dev/video0 ! video/x-raw,width=640,height=360 ! autovideosink
+	[[ $2 == 1 ]] && gst-launch-1.0 v4l2src device=/dev/video0 ! videoflip video-direction=horiz ! video/x-raw,width=640,height=360 ! autovideosink
+} || [[ $1 == landscape ]] && {
+	[[ -z $2 ]] || [[ $2 == 0 ]] && gst-launch-1.0 udpsrc port=5000 ! h264parse ! avdec_h264 ! videoflip video-direction=identity ! autovideosink
+	[[ $2 == 1 ]] && gst-launch-1.0 udpsrc port=5000 ! h264parse ! avdec_h264 ! videoflip video-direction=identity ! videoflip video-direction=horiz ! autovideosink
+} || [[ $1 == portrait ]] && {
+	[[ -z $2 ]] || [[ $2 == 0 ]] && gst-launch-1.0 udpsrc port=5000 ! h264parse ! avdec_h264 ! videoflip video-direction=90r ! autovideosink
+	[[ $2 == 1 ]] && gst-launch-1.0 udpsrc port=5000 ! h264parse ! avdec_h264 ! videoflip video-direction=90r ! videoflip video-direction=horiz ! autovideosink
+} || [[ $1 == audio ]] && {
+	gst-launch-1.0 udpsrc port=5001 ! audio/x-raw, format=S16LE, channels=1, rate=16000 ! autoaudiosink
+}

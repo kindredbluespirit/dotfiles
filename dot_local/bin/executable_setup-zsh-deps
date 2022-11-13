@@ -1,0 +1,15 @@
+#!/usr/bin/env zsh
+
+## grml
+wget -O $ZDOTDIR/.zshrc https://git.grml.org/f/grml-etc-core/etc/zsh/zshrc
+
+## starship
+extractdir=~/.cache/starship
+mkdir $extractdir
+pushd $extractdir
+gzfile=starship-x86_64-unknown-linux-gnu.tar.gz
+## curl corrupts the file for some reason, use wget instead
+wget https://github.com/starship/starship/releases/download/v1.10.3/$gzfile
+## archive contains only the starship executable binary
+tar -xzf $gzfile -C $XDG_BIN_HOME
+popd

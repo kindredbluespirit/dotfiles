@@ -1,0 +1,3 @@
+[[ -e ~/.local/share/.shell-blocked ]] && exec zsh
+
+command -v starship && eval "$(starship init bash)"

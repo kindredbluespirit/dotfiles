@@ -1,0 +1,18 @@
+# SHHKD_SHELL=/usr/bin/zsh
+
+## wmctrl #######################################
+
+## Only to be used with window managers that comply with the EWMH/ICCCM/NetWM specification
+
+# close window (node)
+super + q
+	wmctrl -c :ACTIVE:
+
+# toggle fullscreen layout
+super + f
+    wmctrl -b toggle,fullscreen -r :ACTIVE:
+
+# focus or send to the given desktop
+super + {_,shift + }{0-9}
+    wmctrl -{t,s} {0-9} -r :ACTIVE:
+#################################################

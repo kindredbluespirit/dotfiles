@@ -1,0 +1,13 @@
+{
+    "update.showReleaseNotes": false,
+    "workbench.enableExperiments": false,
+    "workbench.settings.enableNaturalLanguageSearch": false,
+    "json.schemaDownload.enable": false,
+    "extensions.autoCheckUpdates": false,
+    "npm.fetchOnlinePackageInfo": false,
+    "extensions.autoUpdate": false,
+    "update.mode": "none",
+    "telemetry.enableTelemetry": false,
+    "editor.fontFamily": "'Noto Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "workbench.colorTheme": "Default Dark+"
+}

@@ -1,0 +1,7 @@
+#!/usr/bin/env zsh
+
+filename=$(zenity --file-selection)
+[[ -n $filename ]] && {
+    mpv $filename &
+    exit 0
+} || exit 1

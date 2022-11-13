@@ -1,0 +1,42 @@
+# disable grml prompt
+prompt off
+
+unalias lsd
+
+# remote
+REMOTE=$XDG_CONFIG_HOME/common/remote.sh
+[ -f $REMOTE ] && . $REMOTE
+
+## node
+# alias npm="npm -g"
+
+## nvm
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" --no-use # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+## ROS
+# export ROS_DOMAIN_ID=42
+# ROS_SETUP=/opt/ros2/rolling/setup.zsh
+# [[ -f $ROS_SETUP ]] && . $ROS_SETUP
+
+## conda (use pyenv instead)
+# alias activate-conda="[ -d $HOME/.conda ] && . <($HOME/.conda/bin/conda shell.zsh hook)" # taken from the install script
+
+## pyenv init
+## 1. compsys isn't accepted here, use compctl
+## 2. run "pyenv rehash" to rebuild shim files, refer to README.md (https://github.com/pyenv/pyenv)
+type pyenv >/dev/null 2>&1 && . $(pyenv root)/completions/pyenv.zsh
+
+## emacs
+alias emacs-shell="emacs --batch --eval \"(while t (print (condition-case e (eval (read)) (error (error-message-string e)))))\""
+
+## battery
+alias battery="more /sys/class/power_supply/BAT0/capacity"
+
+## query time
+alias today="date +%F_%a"
+alias now="date +%T"
+
+# starship
+[[ -n `which -p starship` ]] && . <(starship init zsh --print-full-init)

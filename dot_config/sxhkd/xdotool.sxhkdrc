@@ -1,0 +1,18 @@
+# SHHKD_SHELL=/usr/bin/zsh
+
+## xdotool #######################################
+
+## Only to be used with window managers that comply with the EWMH/ICCCM/NetWM specification
+
+# close window (node)
+super + q
+	xdotool getactivewindow windowquit
+
+# toggle fullscreen layout
+super + f
+    xdotool getactivewindow windowstate --toggle FULLSCREEN %@
+
+# focus or send to the given desktop
+super + {_,shift + }{0-9}
+    xdotool {set_desktop,getactivewindow set_desktop_for_window %@} {0-9}
+#################################################

@@ -1,0 +1,5 @@
+#!/usr/bin/env lua
+
+pwd = os.getenv('PWD')
+
+print("cloning/pulling all the git sub-repositories")

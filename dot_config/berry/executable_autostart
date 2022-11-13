@@ -1,0 +1,16 @@
+#!/usr/bin/env zsh
+
+berryc decorate_new false
+
+berryc name_desktop 1 1
+berryc name_desktop 2 2
+berryc name_desktop 3 3
+berryc name_desktop 4 4
+berryc name_desktop 5 5
+berryc name_desktop 6 6
+berryc name_desktop 7 7
+berryc name_desktop 8 8
+berryc name_desktop 9 9
+berryc name_desktop 10 0
+
+sxhkd -c $XDG_CONFIG_HOME/sxhkd/berry.sxhkdrc &

@@ -1,0 +1,55 @@
+#!/usr/bin/env zsh
+
+wallpaper
+respawn picom
+dock; (sleep 1; dock hide) &
+
+## avoid putting plank in dock
+# respawn cutefish-dock
+respawn plank
+# respawn cairo-dock -o
+# respawn latte-dock
+
+## sxhkd
+respawn sxhkd $XDG_CONFIG_HOME/sxhkd/xdotool.sxhkdrc
+
+## emacs
+respawn emacs --daemon
+
+## code-server
+# respawn code-server
+
+## notifier
+respawn lxqt-notificationd
+# respawn /usr/lib/xfce4/notifyd/xfce4-notifyd
+# respawn /usr/lib/notify-osd/notify-osd
+# respawn deadd-notification-center
+
+## tray
+tray
+
+## polkit agent
+respawn lxqt-policykit-agent
+
+## launcher (rofi is primary)
+# respawn `pyenv which python` `which ulauncher` --hide-window --no-window-shadow --dev
+# respawn albert
+# respawn synapse -s
+
+## lock manager, locks before suspend and hibernate too
+respawn xss-lock -l physlock
+
+## java (window manager's real name will be lost)
+# wmname LG3D
+
+## input method (ibus, fcitx)
+IM=fcitx
+export GTK_IM_MODULE=$IM
+export QT_IM_MODULE=$IM
+export XMODIFIERS=@im=$IM
+# respawn ibus-daemon -drxR
+respawn fcitx5
+
+## default cursor
+xsetroot -cursor_name left_ptr
+

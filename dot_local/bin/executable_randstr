@@ -1,0 +1,11 @@
+#!/usr/bin/env -S python
+
+import random, string, sys
+
+if len(sys.argv) < 2:
+    raise Exception("needs 2 arguments")
+
+n = int(sys.argv[1])
+pool = string.ascii_lowercase + string.digits
+x = ''.join(random.choice(pool) for _ in range(n))
+print(x)

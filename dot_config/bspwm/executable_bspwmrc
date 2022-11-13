@@ -1,0 +1,54 @@
+#!/usr/bin/env zsh
+
+## hotkey daemon (put the common config instance in wm-startup instead)
+respawn sxhkd -c $XDG_CONFIG_HOME/sxhkd/bspwm.sxhkdrc
+
+## bspwm-specific sxhkd configuration
+# pwarden -S --name sxhkd.bspwm --pool xorg -- sxhkd -c $XDG_CONFIG_HOME/sxhkd/sxhkdrc.bspwm
+
+# ## default cursor
+# xsetroot -cursor_name left_ptr
+
+# wm-startup
+
+# bspc monitor -d I II III IV V VI VII VIII IX X
+bspc monitor -d 1 2 3 4 5 6 7 8 9 0
+
+bspc config focus_follows_pointer true
+
+bspc config border_width         0
+bspc config window_gap           8
+
+bspc config split_ratio          0.5
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+bspc config automatic_scheme     spiral
+
+bspc config presel_feedback_color "#eeeeee"
+
+# ## floating windows (from xprop/xwininfo)
+# floating_array=(
+#     Alacritty
+#     kitty
+#     "Tor Browser"
+#     Ardour-6.3.0
+#     QjackCtl
+#     Cadence
+#     Pavucontrol
+#     pavucontrol-qt
+#     lxqt-config
+#     "Nm-connection-editor"
+#     "Bspwm"
+# )
+# for className in $floating_array
+# do bspc rule -a $className state=floating
+# done
+
+# ## floating by default
+# killall bspc
+# bspc subscribe node_add | while read -A msg
+# do
+#     node_id=$msg[5]
+#     bspc node "$node_id" -t floating
+# done &

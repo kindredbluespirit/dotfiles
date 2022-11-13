@@ -1,0 +1,27 @@
+[$Version]
+update_info=ksmserver_update_loginMode_value.upd:ksmserver_update_loginMode_value_default_enum
+
+[LegacySession: saved at previous logout]
+count=0
+
+[Session: saved at previous logout]
+clientId1=106e656f6e000157934295800000011990004
+clientId2=1061796d0000158247452100000013930007
+clientId3=1061796d0000158247452200000013930010
+count=3
+discardCommand1[$e]=rm,$HOME/.config/session/kwin_106e656f6e000157934295800000011990004_1582474563_467989
+program1=/usr/bin/kwin_x11
+program2=/usr/lib/x86_64-linux-gnu/libexec/DiscoverNotifier
+program3=pulseaudio
+restartCommand1=/usr/bin/kwin_x11,-session,106e656f6e000157934295800000011990004_1582474563_467989
+restartCommand2=/usr/lib/x86_64-linux-gnu/libexec/DiscoverNotifier,-session,1061796d0000158247452100000013930007_1582474563_464844
+restartCommand3=
+restartStyleHint1=0
+restartStyleHint2=0
+restartStyleHint3=0
+userId1=user
+userId2=user
+userId3=user
+wasWm1=true
+wasWm2=false
+wasWm3=false

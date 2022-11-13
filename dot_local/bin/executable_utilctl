@@ -1,0 +1,17 @@
+#!/usr/bin/env zsh
+# named so because findmnt belongs to the package util-linux
+
+[ -z $2 ] && exit 1
+
+block=/dev/disk/by-partlabel/$2
+
+# get one given the other two, among mountpoint, physical block and partlabel, using findmnt and lsblk
+[[ $1 == mountpoint ]] && findmnt -no target -S $block
+[[ $1 == device ]] && readlink -f $block
+
+# mount, change root or unmount, given the partlabel, using the above functions
+[[ $1 == mount ]] && udisksctl mount -b $block >/dev/null 2>&1 && print - `utilctl mountpoint $2` 
+[[ $1 == chroot ]] && doas chroot `utilctl mountpoint $2` ${3:-/bin/sh}
+[[ $1 == unmount ]] && udisksctl unmount -b $block >/dev/null 2>&1
+
+exit 0

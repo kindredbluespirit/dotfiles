@@ -1,0 +1,13 @@
+[ -z $XDG_CONFIG_HOME ] && export XDG_CONFIG_HOME="$HOME/.config"
+[ -z $XDG_DATA_HOME ] && export XDG_DATA_HOME="$HOME/.local/share"
+[ -z $XDG_CACHE_HOME ] && export XDG_CACHE_HOME="$HOME/.cache"
+
+export ZDOTDIR=$XDG_CONFIG_HOME/zsh
+[ -f $ZDOTDIR/.zshenv ] && . $ZDOTDIR/.zshenv
+
+# This file is only meant for the most basic/essential variables.
+
+# Most of our configuration is done in two other files located in $ZDOTDIR.
+# 1. .zshenv - for both interactive shells and scripts
+# 2. .zshrc  - for interactive shells only
+# This segregation is mainly for performance reasons.

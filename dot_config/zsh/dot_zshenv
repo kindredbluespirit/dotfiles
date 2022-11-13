@@ -1,0 +1,160 @@
+export IDENTITY=onetruffle # nothing to do with $USER or $USERNAME
+export DOMAIN=homothereum.org
+
+## taken from startlxqt ###########################################################
+
+# contains() {
+#     local str="$1" substr="$2"
+#     [ "$str" = "$substr" -o -z "${str##$substr:*}" -o -z "${str##*:$substr:*}" -o -z "${str%%*:$substr}" ]
+# }
+
+# [ -z "$XDG_DATA_DIRS" ] && XDG_DATA_DIRS="$XDG_DATA_HOME:/usr/local/share:/usr/share" || {
+#     ! contains "$XDG_DATA_DIRS" "/usr/share" && XDG_DATA_DIRS="$XDG_DATA_DIRS:/usr/share"
+# } && export XDG_DATA_DIRS
+
+# [ -z "$XDG_CONFIG_DIRS" ] && XDG_CONFIG_DIRS="/etc:/etc/xdg:/usr/share" || {
+#     ! contains "$XDG_CONFIG_DIRS" '/etc/xdg' && XDG_CONFIG_DIRS="$XDG_CONFIG_DIRS:/etc/xdg"
+# } && export XDG_CONFIG_DIRS
+
+# [ -z "$XDG_CACHE_HOME" ] && export XDG_CACHE_HOME="$HOME/.cache"
+
+# unfunction contains
+
+# # Qt4 platform plugin
+# export QT_PLATFORM_PLUGIN=lxqt
+
+# # Qt5 platform plugin
+# export QT_QPA_PLATFORMTHEME=lxqt
+
+# # use lxqt-applications.menu for main app menu
+# export XDG_MENU_PREFIX="lxqt-"
+
+# export XDG_CURRENT_DESKTOP="LXQt"
+
+## end of the taken part ############################################################
+
+# not standardized by the xdg specification
+[ -z $XDG_BIN_HOME ] && export XDG_BIN_HOME="$HOME/.local/bin"
+
+# path and fpath (tied to PATH and FPATH respectively)
+export path fpath
+
+# loadable files
+fpath=($XDG_DATA_HOME/zsh $fpath)
+
+# timezone (overrides system-wide setting)
+# export TZ=:/usr/share/zoneinfo/`cat $XDG_CONFIG_HOME/timezone`
+
+# zsh options
+# setopt nullglob
+
+# dotfiles
+export DOTFILES=$HOME/.dotfiles
+export DOTFILES_CONFIG_HOME=$DOTFILES/.config
+export DOTFILES_DATA_HOME=$DOTFILES/.local/share
+
+export DEFAULTSHELL=zsh
+
+# # git (DO NOT add the global git config file to the dotfiles, because $HOME is being evaluated before getting added to the config, exposing the home path)
+# export GIT_USER_NAME=$IDENTITY
+# export GIT_USER_EMAIL=git@$DOMAIN
+# export GIT_CONFIG_DIR=$XDG_CONFIG_HOME/git
+
+# pyenv (the init command significantly increases the login shell boot delay unless the rehash is disabled)
+export PYENV_SHELL=zsh
+export PYENV_ROOT=$HOME/.pyenv
+path=($PYENV_ROOT/bin $PYENV_ROOT/shims $path)
+
+# node
+export NPM_CONFIG_PREFIX=$HOME/.node
+export NODE_PATH=$NPM_CONFIG_PREFIX/lib/node_modules
+path=($NPM_CONFIG_PREFIX/bin $path)
+
+# library path
+export CPLUS_INCLUDE_PATH=$XDG_DATA_HOME/lib/cpp
+
+# haskell (ghcup)
+GHCUP_USE_XDG_DIRS=
+path=($HOME/.cabal/bin $HOME/.ghcup/bin $path)
+
+# java
+export _JAVA_AWT_WM_NONREPARENTING=1
+
+# spark
+export SPARK_HOME=$HOME/.spark
+path=($SPARK_HOME/bin $path)
+
+# rust (rustup)
+path=($HOME/.cargo/bin $path)
+
+# deno
+path=($HOME/.deno/bin $path)
+
+# nim
+path=($HOME/.nimble/bin $path)
+
+# go - prone to deprecation (stereotyping google's technologies)
+export GOROOT=$HOME/.go
+export GOPATH=$HOME/.gopath
+path=($GOROOT/bin $GOPATH/bin $path)
+
+# flutter
+path=($HOME/.flutter.d/bin $path)
+
+## doom emacs (reserve-config resting at ~/.config/emacs.alt)
+export EMACS=emacs
+path=($HOME/.emacs-doom/bin $path)
+
+# terminal
+export TERMINFO=/usr/share/terminfo # helps with a few problems like the backspace of the python shell
+
+# locale (DO NOT DO THIS, not intended to be placed in an init file)
+# export LC_ALL=C
+
+# nltk (python)
+export NLTK_DATA=$XDG_DATA_HOME/nltk_data
+
+# android
+path=(
+    $HOME/.android-studio/bin
+    $HOME/.android-sdk/{emulator,{tools/,}bin,platform-tools}
+    $path
+)
+
+# wasmtime
+export WASMTIME_HOME=$HOME/.wasmtime
+export path=($WASMTIME_HOME/bin $path)
+
+# wasmer
+export WASMER_DIR=$HOME/.wasmer
+export WASMER_CACHE_DIR=$WASMER_DIR/cache
+path=($WASMER_DIR/bin $WASMER_DIR/globals/wapm_packages/.bin $path)
+
+# vcvrack
+export RACK_DIR=~/.Rack-SDK
+
+# neofetch
+alias os="neofetch distro --distro_shorthand tiny --os_arch off | sed \"s/distro: //\" | sed \"s/ *$//\""
+
+## input method (ibus, fcitx), moved to xinitrc/wm-startup
+# IM=ibus
+# export GTK_IM_MODULE=$IM
+# export QT_IM_MODULE=$IM
+# export XMODIFIERS=@im=$IM
+
+## chezmoi
+alias minchezmoi="chezmoi --no-pager --source ~/.dotfiles"
+
+## grml (use getshelldeps instead)
+# alias getgrml="wget -O $ZDOTDIR/.zshrc https://git.grml.org/f/grml-etc-core/etc/zsh/zshrc"
+
+## tor
+TOR_HOME=$HOME/.tor-browser_en-US
+
+## local path (precedence over system-wide path), comes at the end of the file
+export LOCAL_PATH=$HOME/.local/bin
+path=($LOCAL_PATH $path)
+
+## things you must not put in this file directly
+# zlocal=$ZDOTDIR/.zshenv.local
+# [[ -f $zlocal ]] && . $zlocal

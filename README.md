@@ -1,6 +1,6 @@
 # dotfiles
 
-This repository is hosted on codeberg at https://codeberg.org/onetruffle/dotfiles.git.\
+This repository is hosted on codeberg at https://codeberg.org/onetruffle/dotfiles.git. \
 The github version is a backup mirror and is sometimes not up to date.
 
 [//]: # (I frequently squash the commits to save memory and because I don't really

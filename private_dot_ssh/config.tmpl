@@ -6,13 +6,10 @@ Host {{ $host -}}-{{- $name }}
     IdentityFile ~/.ssh/{{- $name }}
 
 {{   end -}}
-{{ end -}}
-{{ range $_, $name := list "user" -}}
-{{   range $_, $host := list "aur" -}}
-Host {{ $host -}}-{{- $name }}
+{{- end -}}
+{{ range (list "user") -}}
+Host aur-{{ . }}
     User git
-    HostName {{ $host -}}.archlinux.org
-    IdentityFile ~/.ssh/{{- $name }}
-
-{{   end -}}
+    HostName aur.archlinux.org
+    IdentityFile ~/.ssh/{{ . }}
 {{ end -}}

@@ -1,0 +1,18 @@
+{{ range $_, $name := list "user" "onetruffle" -}}
+{{   range $_, $host := list "gitlab" "github" "codeberg" -}}
+Host {{ $host -}}-{{- $name }}
+    User git
+    HostName {{ $host -}}.com
+    IdentityFile ~/.ssh/{{- $name }}
+
+{{   end -}}
+{{ end -}}
+{{ range $_, $name := list "user" -}}
+{{   range $_, $host := list "aur" -}}
+Host {{ $host -}}-{{- $name }}
+    User git
+    HostName {{ $host -}}.archlinux.org
+    IdentityFile ~/.ssh/{{- $name }}
+
+{{   end -}}
+{{ end -}}

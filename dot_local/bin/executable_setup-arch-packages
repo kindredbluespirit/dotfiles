@@ -52,6 +52,9 @@ tint2
 oreo-cursors-git
 rofi
 
+## read windows partitions
+ntfs-3g
+
 fcitx5-im
 # fcitx5
 
@@ -95,6 +98,7 @@ feh
 # lxqt-config
 
 emacs
+zellij
 
 xss-lock
 physlock

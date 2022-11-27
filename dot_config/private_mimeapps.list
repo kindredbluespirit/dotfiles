@@ -2,7 +2,7 @@
 application/json=visual-studio-code.desktop;
 application/pdf=brave-browser.desktop;
 application/x-shellscript=vscodium-bin.desktop;
-text/plain=vscodium-bin.desktop;
+text/plain=codium.desktop;libreoffice-writer.desktop;vscodium-bin.desktop;
 video/mp4=mpv.desktop;
 video/x-matroska=mpv.desktop;
 image/png=feh.desktop;

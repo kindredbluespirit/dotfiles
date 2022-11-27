@@ -3,8 +3,14 @@
 GIT_DIR=`git rev-parse --git-dir`
 username=${1:-$IDENTITY}
 git config --local user.name $username
+
+## commit email
 git config --local user.email ${2:-'<>'} # empty email address
+# git config --local user.email ${2:-"$username@$DOMAIN"}
+
 git config --local url.https://.insteadOf git://
 # git config --local pull.ff only
 git config --local credential.helper "store --file=$GIT_DIR/credentials"
-git config --local core.sshCommand "ssh -F ~/.ssh/config-full"
+
+## ssh config location
+# git config --local core.sshCommand "ssh -F ~/.ssh/config-full"

@@ -1,0 +1,14 @@
+#!/usr/bin/env zsh
+
+[[ $# -ge 1 ]] || {
+    print "not enough arguments"
+    exit 1
+}
+
+case $1 in
+    (start-attached) podman start -ail;;
+    (restart) podman restart -l;;
+    (stop) podman stop -l;;
+    (exec) podman exec -til -w /root bash;;
+	(*) echo "$1: not found"; exit 127;;
+esac

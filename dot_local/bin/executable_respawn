@@ -1,5 +1,10 @@
 #!/usr/bin/env zsh
 
+[[ $# -ge 1 ]] || {
+    print "not enough arguments"
+    exit 1
+}
+
 ## There are three names corresponding to a process command (ulauncher --hide-window --no-window-shadow)
 ## 1. process name - ulauncher
 ## 2. commandline name - <the-exact-command-that-was-typed>  

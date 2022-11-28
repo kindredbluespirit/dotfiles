@@ -1,40 +1,40 @@
-{{ range $_, $host := list "gitlab" "github" -}}
 {{ range $_, $name := list "user" "onetruffle" -}}
 {{ if eq $name "user" -}}
-Host {{ $host -}}.com
+Host gitlab.com
     User git
     IdentityFile ~/.ssh/{{- $name }}
 
-{{ end -}}
-Host {{ $host -}}-{{- $name }}
-    User git
-    HostName {{ $host -}}.com
-    IdentityFile ~/.ssh/{{- $name }}
-
-{{ end -}}
-{{- end -}}
-{{ range $_, $host := list "codeberg" -}}
-{{ range $_, $name := list "user" "onetruffle" -}}
-{{ if eq $name "user" -}}
-Host {{ $host -}}.org
+Host github.com
     User git
     IdentityFile ~/.ssh/{{- $name }}
 
-{{ end -}}
-Host {{ $host -}}-{{- $name }}
+Host codeberg.org
     User git
-    HostName {{ $host -}}.org
     IdentityFile ~/.ssh/{{- $name }}
 
-{{ end -}}
-{{- end -}}
-{{ range (list "user") -}}
 Host aur.archlinux.org
     User aur
-    IdentityFile ~/.ssh/{{ . }}
+    IdentityFile ~/.ssh/{{- $name }}
 
-Host aur-{{ . }}
+{{ end -}}
+Host gitlab-{{- $name }}
+    User git
+    HostName gitlab.com
+    IdentityFile ~/.ssh/{{- $name }}
+
+Host github-{{- $name }}
+    User git
+    HostName github.com
+    IdentityFile ~/.ssh/{{- $name }}
+
+Host codeberg-{{- $name }}
+    User git
+    HostName codeberg.org
+    IdentityFile ~/.ssh/{{- $name }}
+
+Host aur-{{- $name }}
     User aur
     HostName aur.archlinux.org
-    IdentityFile ~/.ssh/{{ . }}
+    IdentityFile ~/.ssh/{{- $name }}
+
 {{ end -}}

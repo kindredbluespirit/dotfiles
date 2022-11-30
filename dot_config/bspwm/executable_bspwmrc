@@ -7,7 +7,7 @@ respawn sxhkd -c $XDG_CONFIG_HOME/sxhkd/bspwm.sxhkdrc
 # pwarden -S --name sxhkd.bspwm --pool xorg -- sxhkd -c $XDG_CONFIG_HOME/sxhkd/sxhkdrc.bspwm
 
 # ## default cursor
-# xsetroot -cursor_name left_ptr
+xsetroot -cursor_name left_ptr
 
 # wm-startup
 

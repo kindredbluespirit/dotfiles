@@ -12,7 +12,10 @@ super + q
 super + f
     wmctrl -b toggle,fullscreen -r :ACTIVE:
 
-# focus or send to the given desktop
-super + {_,shift + }{0-9}
-    wmctrl -{t,s} {0-9} -r :ACTIVE:
-#################################################
+## switch to the given desktop
+super + {0-9}
+    wmctrl -s {0-9}
+
+# move to the given desktop
+super + shift + {0-9}
+    wmctrl -t {0-9} -r :ACTIVE:

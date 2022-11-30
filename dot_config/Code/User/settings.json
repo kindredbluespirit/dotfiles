@@ -36,5 +36,6 @@
     "editor.renderWhitespace": "all",
     "editor.renderControlCharacters": true,
     "redhat.telemetry.enabled": false,
-    "cmake.configureOnOpen": false
+    "cmake.configureOnOpen": false,
+    "security.workspace.trust.enabled": false
 }

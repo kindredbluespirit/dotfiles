@@ -2,11 +2,11 @@
 
 wallpaper
 respawn picom
-dock; (sleep 1; dock hide) &
+# dock; (sleep 1; dock hide) &
 
 ## avoid putting plank in dock
 # respawn cutefish-dock
-respawn plank
+# respawn plank
 # respawn cairo-dock -o
 # respawn latte-dock
 
@@ -20,7 +20,7 @@ respawn emacs --daemon
 # respawn code-server
 
 ## notifier
-respawn lxqt-notificationd
+# respawn lxqt-notificationd
 # respawn /usr/lib/xfce4/notifyd/xfce4-notifyd
 # respawn /usr/lib/notify-osd/notify-osd
 # respawn deadd-notification-center
@@ -37,7 +37,7 @@ respawn lxqt-policykit-agent
 # respawn synapse -s
 
 ## lock manager, locks before suspend and hibernate too
-respawn xss-lock -l physlock
+# respawn xss-lock -l physlock
 
 ## java (window manager's real name will be lost)
 # wmname LG3D

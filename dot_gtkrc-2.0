@@ -7,4 +7,4 @@ gtk-button-images = 1
 gtk-menu-images = 1
 gtk-toolbar-style = GTK_TOOLBAR_ICONS
 gtk-cursor-theme-name = oreo_white_cursors
-gtk-cursor-theme-size = 24
+gtk-cursor-theme-size = 22

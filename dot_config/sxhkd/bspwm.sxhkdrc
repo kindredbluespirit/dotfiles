@@ -20,9 +20,9 @@ super + {_,shift +}backslash
 super + shift + {r}
 	{bspc wm -r && wm-startup}
 
-# close window (node)
-super + q
-	bspc node -c || bspc node -k
+# ## close window (node)
+# super + q
+# 	bspc node -c || bspc node -k
 
 # switch between tiling/floating (inspired by i3)
 super + shift + space
@@ -31,9 +31,9 @@ super + shift + space
     else bspc node focused -t tiled; \
     fi
 
-# toggle fullscreen layout
-super + f
-	bspc node focused -t \~fullscreen
+## toggle fullscreen layout
+# super + f
+# 	bspc node focused -t \~fullscreen
 
 # focus the node in the given direction
 super + {control,shift} + {Left,Down,Up,Right}
@@ -49,9 +49,9 @@ super + {o,i}
 	bspc node {older,newer} -f; \
 	bspc wm -h on
 
-# focus or send to the given desktop
-super + {_,shift + }{1-9,0}
-	bspc {desktop -f,node -d} '^{1-9,10}'
+## focus or send to the given desktop
+# super + {_,shift + }{1-9,0}
+# 	bspc {desktop -f,node -d} '^{1-9,10}'
 
 # rotate the parent of a leaf node (window/receptacle, I think), there is no such thing as rotating the leaf node itself
 super + {bracketleft,bracketright}

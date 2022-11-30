@@ -81,7 +81,7 @@ export XDG_SESSION_TYPE=x11
 # 2bwm &
 # xfwm4 &
 # respawn berry
-# bspwm & respawn sxhkd $XDG_CONFIG_HOME/sxhkd/bspwm.sxhkdrc
+# bspwm & # respawn sxhkd $XDG_CONFIG_HOME/sxhkd/bspwm.sxhkdrc
 openbox &
 # fluxbox --rc $XDG_CONFIG_HOME/fluxbox/config &
 # pekwm --config $XDG_CONFIG_HOME/pekwm/config &

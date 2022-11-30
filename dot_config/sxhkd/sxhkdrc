@@ -34,36 +34,6 @@ super + e
 # super + v
 #     xdg-open http://code.local
 
-## full screenshot
-Print
-    shotgun ~/Pictures/screenshots/shotgun_`date +%F_%T`.png
-    # scrot ~/Pictures/screenshots/%F_%T.png
-    # deepin-screenshot -f ~/Pictures/screenshots
-    # flameshot screen -p ~/Pictures/screenshots
-
-## active/focused window screenshot (obsolete, use the selection screenshot instead)
-# super + Print
-    # scrot -u ~/Pictures/screenshots/%F_%T.png
-    # deepin-screenshot -w ~/Pictures/screenshots
-
-## selected window/area screenshot
-super + Print
-    shotgun -g `hacksaw` ~/Pictures/screenshots/shotgun_`date +%F_%T`.png
-    # scrot -s ~/Pictures/screenshots/%F_%T.png
-    # flameshot gui -p ~/Pictures/screenshots
-    # deepin-screenshot -s ~/Pictures/screenshots
-    # lximage-qt --screenshot
-
-# audio
-XF86Audio{RaiseVolume,LowerVolume}
-	sound {+,-}
-XF86Audio{_,Mic}Mute
-	sound {m,M}
-
-## backlight
-XF86MonBrightness{Up,Down}
-	backlight {+,-}
-
 ## leave lxqt session
 # super + shift + q
 #     lxqt-leave --logout

@@ -11,8 +11,9 @@ super + {_}Return
 	{sensible-terminal}
 
 ## wallpaper (also fixes screen buffer glitches)
-super + w
-    wallpaper
+## webcam
+super + {shift +,_}w
+    {wallpaper,webcam}
 
 ## program launcher
 ctrl + grave
@@ -23,12 +24,9 @@ ctrl + grave
 super + space
 	dock toggle
 
-# super + {_,shift,alt} + e
-#	emacsclient -c --eval "({_,newsticker-show-news,fancy-startup-screen})"
-
-## webcam
-super + e
-    webcam
+## emacs
+super + {_,shift,alt} + e
+	emacsclient -c --eval "({_,newsticker-show-news,fancy-startup-screen})"
 
 ## new code-server window
 # super + v

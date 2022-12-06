@@ -5,7 +5,12 @@
     exit 1
 }
 
+## podman-run cannot take --net=host, it takes --net=default which works
+
 case $1 in
+    (build-image) podman build --rm -t ${2:-image1} .;; ## only in the directory with the dockerfile
+    (build-container) podman run -it -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix ${2:-image1};;
+    (build-container-rm) podman run -it --rm -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix ${2:-image1};;
     # (start-attached) podman start -ail;;
     (start) podman start -il;;
     # (restart) podman restart -l;;

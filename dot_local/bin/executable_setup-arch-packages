@@ -1,5 +1,7 @@
 #!/bin/sh
 
+## dependencies - fakeroot
+
 ## yay
 tempdir=~/.cache/tempdir-398282
 rm -rf $tempdir
@@ -127,5 +129,5 @@ plank
 )
 
 ## this is a bash array, not a zsh array
-print ${packages[@]}
+echo ${packages[@]}
 yay -S --noconfirm ${packages[@]}

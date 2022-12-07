@@ -84,7 +84,7 @@ make
 wget
 
 chezmoi
-# qogir-icon-theme
+qogir-icon-theme
 
 xdotool
 git

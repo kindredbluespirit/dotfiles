@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/env zsh
 
-## dependencies - git, fakeroot
+## dependencies - zsh, git, fakeroot
 
 ## yay
 tempdir=~/.cache/tempdir-398282
@@ -134,5 +134,8 @@ plank
 )
 
 ## this is a bash array, not a zsh array
-echo ${packages[@]}
-yay -S --noconfirm ${packages[@]}
+# echo ${packages[@]}
+# yay -S --noconfirm ${packages[@]}
+
+print -l $packages
+yay -S --noconfirm $packages

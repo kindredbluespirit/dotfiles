@@ -48,6 +48,7 @@ pipewire-pulse
 # pulseaudio
 pavucontrol
 networkmanager
+network-manager-applet
 blueman
 bluez
 bluez-utils

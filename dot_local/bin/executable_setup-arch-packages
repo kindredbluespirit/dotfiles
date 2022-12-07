@@ -19,6 +19,8 @@ packages=(
 yay-bin
 zsh
 
+syncthing
+
 man
 
 tar

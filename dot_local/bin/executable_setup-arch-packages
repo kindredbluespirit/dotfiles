@@ -27,6 +27,9 @@ tar
 gzip
 unzip
 
+bottom
+# gotop-bin
+
 ## handled by another setup script
 # grml-zsh-config
 # starship
@@ -111,6 +114,9 @@ feh
 emacs
 zellij
 
+xautolock
+xscreensaver
+
 xss-lock
 physlock
 neovim
@@ -124,6 +130,7 @@ lxqt
 lxdm
 xfce4
 xfce4-goodies
+sddm
 
 ripgrep
 bat

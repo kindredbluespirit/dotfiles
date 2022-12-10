@@ -26,7 +26,11 @@ export NVM_DIR="$HOME/.config/nvm"
 ## pyenv init
 ## 1. compsys isn't accepted here, use compctl
 ## 2. run "pyenv rehash" to rebuild shim files, refer to README.md (https://github.com/pyenv/pyenv)
-type pyenv >/dev/null 2>&1 && . $(pyenv root)/completions/pyenv.zsh
+# type pyenv >/dev/null 2>&1 && . $(pyenv root)/completions/pyenv.zsh
+command -v pyenv >/dev/null && eval "$(pyenv init -)"
+
+## pyenv-virtualenv
+command -v pyenv >/dev/null && eval "$(pyenv virtualenv-init -)"
 
 ## emacs
 alias emacs-shell="emacs --batch --eval \"(while t (print (condition-case e (eval (read)) (error (error-message-string e)))))\""

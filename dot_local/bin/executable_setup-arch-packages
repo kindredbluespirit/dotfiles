@@ -89,6 +89,7 @@ brave-bin
 gcc
 make
 
+uget
 wget
 
 chezmoi

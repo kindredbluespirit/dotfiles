@@ -1,0 +1,12 @@
+#!/usr/bin/env zsh
+
+[[ $# -ge 1 ]] || {
+    print "not enough arguments"
+    exit 1
+}
+
+## convert array to string
+s="$@"
+print $s
+
+mpv <(gtts-cli $s)

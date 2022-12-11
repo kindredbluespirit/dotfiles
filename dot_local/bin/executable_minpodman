@@ -9,13 +9,12 @@
 
 case $1 in
     (build-image) podman build --rm -t ${2:-image1} .;; ## only in the directory with the dockerfile
-    (build-container) podman run -it -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix \
+    (build-container) podman run -it -e DISPLAY \
+        -v /tmp/.X11-unix:/tmp/.X11-unix \
         -v ~/Documents/podman-shared:/data \
         -v /dev:/dev \
-        \ ## https://joonas.fi/2020/12/audio-in-docker-containers-linux-audio-subsystems-spotifyd/ \
         -v "/etc/alsa:/etc/alsa" \
         -v "/usr/share/alsa:/usr/share/alsa" \
-        -v "~/.config/pulse:/.config/pulse" \
         -v "/run/user/$UID/pulse/native:/run/user/$UID/pulse/native" \
         --env "PULSE_SERVER=unix:/run/user/$UID/pulse/native" \
         --user "$(id -u)" \

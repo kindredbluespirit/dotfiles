@@ -37,5 +37,7 @@
     "editor.renderControlCharacters": true,
     "redhat.telemetry.enabled": false,
     "cmake.configureOnOpen": false,
-    "security.workspace.trust.enabled": false
+    "security.workspace.trust.enabled": false,
+    "window.zoomLevel": 1,
+    "git.confirmSync": false
 }

@@ -44,7 +44,8 @@ super + shift + {p,r}
 
 ## lock screen
 super + l
-	xset s activate # lock
+	xscreensaver-command -lock
+    # xset s activate # lock
 
 ## turn the display off
 XF86Display

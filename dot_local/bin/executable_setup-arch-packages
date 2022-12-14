@@ -60,6 +60,9 @@ blueman
 bluez
 bluez-utils
 
+# xorg
+# xorg-apps
+xorg-xsetroot
 xorg-xinit
 openbox
 bspwm

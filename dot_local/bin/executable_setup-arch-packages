@@ -2,10 +2,10 @@
 
 ## dependencies - zsh, git, fakeroot
 
-level=${2:-0}
+level=${1:-0}
 
 ## yay
-[ -n `pacman -Qq yay-bin ] || {
+[ -n `pacman -Qq yay-bin` ] || {
     tempdir=~/.cache/tempdir-398282
     rm -rf $tempdir
     mkdir -p $tempdir
@@ -118,7 +118,8 @@ noto-fonts-emoji
 fcitx5
 
 light
-xbacklight
+xorg-xbacklight
+# acpilight
 
 opendoas
 feh

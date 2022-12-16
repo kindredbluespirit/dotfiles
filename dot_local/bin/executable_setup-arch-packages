@@ -2,17 +2,21 @@
 
 ## dependencies - zsh, git, fakeroot
 
+level=${2:-0}
+
 ## yay
-tempdir=~/.cache/tempdir-398282
-rm -rf $tempdir
-mkdir -p $tempdir
-pushd $tempdir
-git clone https://aur.archlinux.org/yay-bin
-pushd yay-bin
-makepkg -si
-popd
-popd
-rm -rf $tempdir
+[ -n `pacman -Qq yay-bin ] || {
+    tempdir=~/.cache/tempdir-398282
+    rm -rf $tempdir
+    mkdir -p $tempdir
+    pushd $tempdir
+    git clone https://aur.archlinux.org/yay-bin
+    pushd yay-bin
+    makepkg -si
+    popd
+    popd
+    rm -rf $tempdir
+}
 
 ## install packages using yay
 packages=(
@@ -146,7 +150,10 @@ bat
 dust
 
 plank
+)
 
+[[ level -ge 1 ]] && packages=( $packages
+gparted
 )
 
 ## this is a bash array, not a zsh array

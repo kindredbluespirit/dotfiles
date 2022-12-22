@@ -30,6 +30,8 @@ man
 ttf-nerd-fonts-symbols-common
 
 cmake
+# automake
+base-devel
 
 tar
 gzip

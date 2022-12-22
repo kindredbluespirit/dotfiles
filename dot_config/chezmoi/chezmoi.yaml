@@ -2,3 +2,5 @@ sourceDir: ~/.dotfiles
 # git:
 #     autoPush: true
 pager: ""
+edit:
+  command: nvim

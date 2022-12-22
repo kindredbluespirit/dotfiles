@@ -64,6 +64,7 @@ hacksaw
 pipewire-pulse
 # pulseaudio
 pavucontrol
+pamixer
 networkmanager
 network-manager-applet
 blueman

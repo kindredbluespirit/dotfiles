@@ -5,3 +5,5 @@ case "$1" in
     ("m") pactl set-sink-mute @DEFAULT_SINK@ toggle;;
     ("M") pactl set-source-mute @DEFAULT_SOURCE@ toggle;;
 esac
+
+notify-send -t 1500 -a volume `pamixer --get-volume`

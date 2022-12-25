@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/env zsh
 case "$1" in
     ("+") pactl set-sink-volume @DEFAULT_SINK@ +10%;;
     ("-") pactl set-sink-volume @DEFAULT_SINK@ -10%;;
@@ -6,4 +6,7 @@ case "$1" in
     ("M") pactl set-source-mute @DEFAULT_SOURCE@ toggle;;
 esac
 
-notify-send -t 1500 -a volume `pamixer --get-volume`
+notify_id=/tmp/894282.sound
+[[ -s notify_id ]] || print -1 > $notify_id 
+
+notify-send -t 1500 -a volume -r `cat $notify_id` -p `pamixer --get-volume`% > $notify_id

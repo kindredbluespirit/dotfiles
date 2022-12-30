@@ -7,6 +7,7 @@ case "$1" in
 esac
 
 notify_id=/tmp/894282.sound
-[[ -s notify_id ]] || print -1 > $notify_id 
-
-notify-send -t 1500 -a volume -r `cat $notify_id` -p `pamixer --get-volume`% > $notify_id
+volume=`pamixer --get-volume`%
+print $volume
+[[ -s $notify_id ]] || print -1 > $notify_id 
+[[ -n $1 ]] && notify-send -t 1500 -a volume -r `cat $notify_id` -p $volume > $notify_id || return 0

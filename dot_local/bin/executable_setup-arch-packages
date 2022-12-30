@@ -20,6 +20,8 @@ level=${1:-0}
 
 ## install packages using yay
 packages=(
+archlinux-keyring
+
 yay-bin
 zsh
 
@@ -101,7 +103,7 @@ brave-bin
 # warpinator
 # volumeicon
 # network-manager-applet
-# pa-applet
+pa-applet-git
 
 gcc
 make

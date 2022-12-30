@@ -38,13 +38,16 @@ super + {_,shift,alt} + e
 
 ## power shortcuts (previously powerctl, now xss-lock does what we need)
 super + shift + {l,h}
-	systemctl {suspend,hibernate}
+	lxqt-leave --{suspend,hibernate}
+    # systemctl {suspend,hibernate}
 super + shift + {p,r}
-    {poweroff,reboot}
+    lxqt-leave --{shutdown,reboot}
+    # {poweroff,reboot}
 
 ## lock screen
 super + l
-	xscreensaver-command -lock
+	lxqt-leave --lockscreen
+    # xscreensaver-command -lock
     # xset s activate # lock
 
 ## turn the display off

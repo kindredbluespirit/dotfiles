@@ -67,6 +67,8 @@ pipewire-pulse
 # pulseaudio
 pavucontrol
 pamixer
+alsa-utils
+
 networkmanager
 network-manager-applet
 blueman

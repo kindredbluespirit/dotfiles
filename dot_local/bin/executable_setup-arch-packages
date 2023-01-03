@@ -29,7 +29,7 @@ syncthing
 
 man
 
-ttf-nerd-fonts-symbols-common
+# ttf-nerd-fonts-symbols-common
 
 cmake
 # automake
@@ -83,9 +83,12 @@ openbox
 bspwm
 sxhkd
 tint2
-ttf-icomoon-feather
+# ttf-icomoon-feather
+ttf-material-design-icons
 oreo-cursors-git
 rofi
+
+font-manager
 
 ## read windows partitions
 ntfs-3g
@@ -148,7 +151,7 @@ physlock
 neovim
 mpv
 
-ttf-fork-awesome
+# ttf-fork-awesome
 
 # pyenv
 # base-devel

@@ -56,6 +56,11 @@ xf86-video-vesa
 xf86-video-intel
 xf86-video-amdgpu
 
+plasma-desktop
+kwin-bismuth
+powerdevil
+power-profiles-daemon
+
 xsettingsd # opt dep for lxqt-config
 
 gvfs
@@ -68,6 +73,8 @@ pipewire-pulse
 pavucontrol
 pamixer
 alsa-utils
+
+bottom
 
 networkmanager
 network-manager-applet

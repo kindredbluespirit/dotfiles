@@ -2,9 +2,11 @@
 
 ## quit/restart the session
 super + shift + q
-	wm-shutdown
-super + r
-    wm-startup
+	lxqt-leave --logout
+    # wm-shutdown
+super + shift + r
+    lxqt-leave --reboot
+    # wm-startup
 
 ## insert {terminal emulator,receptacle}
 super + {_}Return

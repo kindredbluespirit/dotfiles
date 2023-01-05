@@ -1,0 +1,21 @@
+[KFileDialog Settings]
+detailViewIconSize=16
+
+[KPropertiesDialog]
+eDP1 Height 1920x1080 eDP1=529
+eDP1 Width 1920x1080 eDP1=404
+
+[MainWindow]
+MenuBar=Disabled
+State=AAAA/wAAAAD9AAAAAAAAA/wAAAPvAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAA
+ToolBarsMovable=Disabled
+eDP1=eDP1
+eDP1 Height 1920x1080 eDP1=1007
+eDP1 Width 1920x1080 eDP1=960
+eDP1 Window-Maximized 1920x1080 eDP1=true
+eDP1 XPosition 1920x1080 eDP1=0
+eDP1 YPosition 1920x1080 eDP1=29
+
+[Open-with settings]
+CompletionMode=1
+History=alacri,ala

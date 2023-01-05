@@ -61,6 +61,7 @@ kwin-bismuth
 powerdevil
 power-profiles-daemon
 plasma-pa
+plasma-nm
 
 xsettingsd # opt dep for lxqt-config
 

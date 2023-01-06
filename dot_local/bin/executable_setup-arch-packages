@@ -58,10 +58,11 @@ xf86-video-amdgpu
 
 plasma-desktop
 kwin-bismuth
-powerdevil
-power-profiles-daemon
 plasma-pa
 plasma-nm
+bluedevil
+powerdevil
+power-profiles-daemon
 
 xsettingsd # opt dep for lxqt-config
 

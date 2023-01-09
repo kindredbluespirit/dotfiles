@@ -4,6 +4,7 @@ update_info=bismuth_shortcuts_category.upd:bismuth-shortcuts-category,bismuth_sh
 [ActivityManager]
 _k_friendly_name=Activity Manager
 switch-to-activity-9eefa4f0-8525-447a-8c0e-6cbfc17e6dea=none,none,Switch to activity "Default"
+switch-to-activity-bfbdbd3b-7c30-40af-9c35-ac022dfae8b8=none,none,Switch to activity "Default"
 
 [Alacritty.desktop]
 New=Meta+Return,none,New Terminal
@@ -246,6 +247,12 @@ stopmedia=Media Stop,Media Stop,Stop media playback
 [org.kde.dolphin.desktop]
 _k_friendly_name=Dolphin
 _launch=Meta+E,Meta+E,Dolphin
+
+[org.kde.konsole.desktop]
+NewTab=none,none,Open a New Tab
+NewWindow=none,none,Open a New Window
+_k_friendly_name=Konsole
+_launch=none,none,Konsole
 
 [org.kde.krunner.desktop]
 RunClipboard=Alt+Shift+F2,Alt+Shift+F2,Run command on clipboard contents

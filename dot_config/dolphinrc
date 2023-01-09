@@ -20,6 +20,8 @@ Places Icons Auto-resize=false
 Places Icons Static Size=22
 
 [KPropertiesDialog]
+HDMI2 Height 1920x1080 HDMI2=532
+HDMI2 Width 1920x1080 HDMI2=419
 Height 1080=505
 Width 1920=464
 eDP1 Height 1920x1080=676

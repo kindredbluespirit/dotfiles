@@ -64,6 +64,10 @@ bluedevil
 powerdevil
 power-profiles-daemon
 
+dolphin
+konsole
+archlinux-themes-sddm
+
 xsettingsd # opt dep for lxqt-config
 
 gvfs

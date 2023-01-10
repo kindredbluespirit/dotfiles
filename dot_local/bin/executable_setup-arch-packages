@@ -67,6 +67,7 @@ power-profiles-daemon
 dolphin
 konsole
 archlinux-themes-sddm
+spectacle
 
 xsettingsd # opt dep for lxqt-config
 

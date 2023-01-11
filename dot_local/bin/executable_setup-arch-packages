@@ -18,12 +18,13 @@ level=${1:-0}
     rm -rf $tempdir
 }
 
+## prevent keyring issues
+yay -S archlinux-keyring
+
 ## install packages using yay
 packages=(
-archlinux-keyring
-
-yay-bin
-zsh
+# yay-bin
+# zsh
 
 syncthing
 
@@ -57,7 +58,7 @@ xf86-video-intel
 xf86-video-amdgpu
 
 plasma-desktop
-kwin-bismuth
+kwin-bismuth-bin
 plasma-pa
 plasma-nm
 bluedevil
@@ -85,7 +86,7 @@ alsa-utils
 bottom
 
 networkmanager
-network-manager-applet
+# network-manager-applet
 blueman
 bluez
 bluez-utils
@@ -123,7 +124,7 @@ brave-bin
 # warpinator
 # volumeicon
 # network-manager-applet
-pa-applet-git
+# pa-applet-git
 
 gcc
 make

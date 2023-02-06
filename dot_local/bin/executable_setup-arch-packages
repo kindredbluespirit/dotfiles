@@ -19,7 +19,7 @@ level=${1:-0}
 }
 
 ## prevent keyring issues
-yay -S archlinux-keyring
+yay -Sy --noconfirm archlinux-keyring
 
 ## install packages using yay
 packages=(

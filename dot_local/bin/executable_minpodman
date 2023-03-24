@@ -18,7 +18,8 @@ case $1 in
         -v "/run/user/$UID/pulse/native:/run/user/$UID/pulse/native" \
         --env "PULSE_SERVER=unix:/run/user/$UID/pulse/native" \
         --user "$(id -u)" \
-        ${2:-image1};;
+        # ${2:-image1};;
+        ${@:-image1};;
     # (build-container-rm) podman run -it --rm -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix ${2:-image1};;
     # (start-attached) podman start -ail;;
     (start) podman start -il;;

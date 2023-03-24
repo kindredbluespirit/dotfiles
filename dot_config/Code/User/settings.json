@@ -39,5 +39,6 @@
     "cmake.configureOnOpen": false,
     "security.workspace.trust.enabled": false,
     "git.confirmSync": false,
-    "window.zoomLevel": 1
+    "window.zoomLevel": 1,
+    "editor.unicodeHighlight.invisibleCharacters": false
 }

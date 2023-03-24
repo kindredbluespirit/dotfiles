@@ -1,0 +1,3 @@
+#!/usr/bin/env zsh
+
+git merge -X theirs --allow-unrelated-histories $@

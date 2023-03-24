@@ -30,6 +30,8 @@ syncthing
 
 man
 
+lshw # hardware info/descriptions
+
 # ttf-nerd-fonts-symbols-common
 
 cmake

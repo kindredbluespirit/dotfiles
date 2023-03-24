@@ -1,5 +1,5 @@
 {{ range $_, $name := list "user" "onetruffle" -}}
-{{ if eq $name "user" -}}
+{{ if eq $name "onetruffle" -}}
 Host gitlab.com
     User git
     IdentityFile ~/.ssh/{{- $name }}

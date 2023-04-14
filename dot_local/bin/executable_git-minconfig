@@ -10,3 +10,5 @@ git config --local url.https://.insteadOf git://
 git config --local credential.helper "store --file=$GIT_DIR/credentials"
 
 git config --local core.sshCommand "ssh -F ~/.ssh/config"
+
+git config pull.rebase false

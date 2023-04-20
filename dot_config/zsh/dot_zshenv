@@ -1,4 +1,4 @@
-export IDENTITY=onetruffle # nothing to do with $USER or $USERNAME
+export IDENTITY=kindredbluespirit # nothing to do with $USER or $USERNAME
 export DOMAIN=homothereum.org
 
 ## taken from startlxqt ###########################################################

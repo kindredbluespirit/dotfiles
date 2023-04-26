@@ -16,6 +16,10 @@ Host aur.archlinux.org
     User aur
     IdentityFile ~/.ssh/{{- $name }}
 
+Host hf.co
+    User git
+    IdentityFile ~/.ssh/{{- $name }}
+
 {{ end -}}
 Host gitlab-{{- $name }}
     User git
@@ -35,6 +39,11 @@ Host codeberg-{{- $name }}
 Host aur-{{- $name }}
     User aur
     HostName aur.archlinux.org
+    IdentityFile ~/.ssh/{{- $name }}
+
+Host hf-{{- $name }}
+    User git
+    HostName hf.co
     IdentityFile ~/.ssh/{{- $name }}
 
 {{ end -}}

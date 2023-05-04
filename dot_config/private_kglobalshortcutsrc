@@ -329,3 +329,7 @@ kcm-lookandfeel=none,none,Global Theme
 kcm-users=none,none,Users
 powerdevilprofilesconfig=none,none,Energy Saving
 screenlocker=none,none,Screen Locking
+
+[xkill.desktop]
+_k_friendly_name=xkill
+_launch=Meta+Shift+Q,none,xkill

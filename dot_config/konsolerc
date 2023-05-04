@@ -6,6 +6,7 @@ Favorites=
 
 [MainWindow]
 Height 1080=1015
+RestorePositionForNextInstance=false
 State=AAAA/wAAAAD9AAAAAAAAB4AAAAPZAAAABAAAAAQAAAAIAAAACPwAAAAA
 ToolBarsMovable=Disabled
 Width 1920=1920

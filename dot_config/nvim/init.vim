@@ -10,3 +10,5 @@ set expandtab
 set number
 set relativenumber
 set nohlsearch
+
+set clipboard+=unnamedplus

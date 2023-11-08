@@ -109,6 +109,9 @@ ttf-material-design-icons
 oreo-cursors-git
 rofi
 
+## for adwaita-dark
+gnome-themes-extra
+
 font-manager
 
 ## read windows partitions
@@ -169,8 +172,10 @@ xscreensaver
 
 xss-lock
 physlock
-neovim
 mpv
+
+neovim
+xclip ## system clipboard for neovim
 
 # ttf-fork-awesome
 

@@ -81,6 +81,9 @@ gvfs
 shotgun
 hacksaw
 
+## for building aur packages
+patchelf
+
 # pipewire
 pipewire-pulse
 # pulseaudio

@@ -22,5 +22,5 @@ chmod +x $f
 # wget -O $f $url
 # chmod +x $f
 wget -O - https://raw.githubusercontent.com/laurent22/joplin/dev/Joplin_install_and_update.sh | bash
-mv ~/.Joplin/Joplin.AppImage joplin
+# mv ~/.Joplin/Joplin.AppImage joplin
 popd

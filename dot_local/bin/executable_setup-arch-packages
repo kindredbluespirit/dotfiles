@@ -52,6 +52,12 @@ bottom
 ## pactree
 pacman-contrib
 
+## stop kdewallet from prompting for password after login
+kwallet-pam
+
+## multimonitor
+kscreen
+
 kdeconnect
 
 mesa

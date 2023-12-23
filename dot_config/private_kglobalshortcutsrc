@@ -5,6 +5,7 @@ update_info=bismuth_shortcuts_category.upd:bismuth-shortcuts-category,bismuth_sh
 _k_friendly_name=Activity Manager
 switch-to-activity-9eefa4f0-8525-447a-8c0e-6cbfc17e6dea=none,none,Switch to activity "Default"
 switch-to-activity-bfbdbd3b-7c30-40af-9c35-ac022dfae8b8=none,none,Switch to activity "Default"
+switch-to-activity-ced7b00f-64a0-4f8f-af3a-a8c3a1fb4221=none,none,Switch to activity "Default"
 
 [Alacritty.desktop]
 New=Meta+Return,none,New Terminal
@@ -66,6 +67,7 @@ _k_friendly_name=Touchpad
 [kded5]
 Show System Activity=Ctrl+Esc,Ctrl+Esc,Show System Activity
 _k_friendly_name=KDE Daemon
+display=Display\tMeta+P,Display\tMeta+P,Switch Display
 
 [kmix]
 _k_friendly_name=Audio Volume
@@ -239,7 +241,7 @@ Window to Screen 6=none,,Window to Screen 6
 Window to Screen 7=none,,Window to Screen 7
 _k_friendly_name=KWin
 view_actual_size=none,Meta+0,Zoom to Actual Size
-view_zoom_in=Meta++\tMeta+=,Meta++,Zoom In
+view_zoom_in=Meta++\tMeta+=,Meta++\tMeta+=,Zoom In
 view_zoom_out=Meta+-,Meta+-,Zoom Out
 
 [mediacontrol]
@@ -298,7 +300,6 @@ activate task manager entry 7=none,Meta+7,Activate Task Manager Entry 7
 activate task manager entry 8=none,Meta+8,Activate Task Manager Entry 8
 activate task manager entry 9=none,Meta+9,Activate Task Manager Entry 9
 activate widget 19=none,none,Activate Pager Widget
-activate widget 3=Alt+F1,none,Activate Application Launcher Widget
 clear-history=none,,Clear Clipboard History
 clipboard_action=Meta+Ctrl+X,Meta+Ctrl+X,Automatic Action Popup Menu
 cycle-panels=Meta+Alt+P,Meta+Alt+P,Move keyboard focus between panels
@@ -320,6 +321,14 @@ toggle do not disturb=none,,Toggle do not disturb
 [rofi.desktop]
 _k_friendly_name=Rofi
 _launch=Ctrl+`,none,Rofi
+
+[shotgun-2.desktop]
+_k_friendly_name=\s-g `hacksaw` ~/Pictures/screenshots/shotgun_`date +%%F_%%T`.png
+_launch=Meta+Print,none,shotgun -g `hacksaw` ~/Pictures/screenshots/shotgun_`date +%%F_%%T`.png
+
+[shotgun.desktop]
+_k_friendly_name=\s~/Pictures/screenshots/shotgun_`date +%%F_%%T`.png
+_launch=Print,none,shotgun ~/Pictures/screenshots/shotgun_`date +%%F_%%T`.png
 
 [systemsettings.desktop]
 _k_friendly_name=System Settings

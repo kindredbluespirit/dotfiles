@@ -40,6 +40,5 @@
     "security.workspace.trust.enabled": false,
     "git.confirmSync": false,
     "editor.unicodeHighlight.invisibleCharacters": false,
-    "C_Cpp.intelliSenseEngine": "disabled",
-    "window.zoomLevel": 2
+    "window.zoomLevel": 1
 }

@@ -1,0 +1,39 @@
+[colors]
+transparent_background_colors = true
+
+[colors.bright]
+black = "0x444444"
+blue = "0x0092ff"
+cyan = "0x67fff0"
+green = "0xabe15b"
+magenta = "0x9a5feb"
+red = "0xff2740"
+white = "0xffffff"
+yellow = "0xffd242"
+
+[colors.normal]
+black = "0x232323"
+blue = "0x008df8"
+cyan = "0x00d8eb"
+green = "0x8ce10b"
+magenta = "0x6d43a6"
+red = "0xff000f"
+white = "0xffffff"
+yellow = "0xffb900"
+
+[colors.primary]
+background = "#001019"
+foreground = "#fffaf4"
+
+[font]
+size = 9.0
+
+[font.normal]
+family = "Noto Sans Mono"
+
+[font.offset]
+x = 0
+y = 2
+
+[window]
+opacity = 0.8

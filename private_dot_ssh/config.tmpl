@@ -48,4 +48,6 @@ Host hf-{{- $name }}
 
 {{ end -}}
 
-Include config.d/* 
+# https://superuser.com/a/1542689/1106531
+Match all
+Include ~/.ssh/config.d/* 

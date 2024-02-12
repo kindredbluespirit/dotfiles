@@ -98,6 +98,9 @@ export GOROOT=$HOME/.go
 export GOPATH=$HOME/.gopath
 path=($GOROOT/bin $GOPATH/bin $path)
 
+## R
+export R_LIBS_USER=$XDG_DATA_HOME/R
+
 # flutter
 path=($HOME/.flutter.d/bin $path)
 

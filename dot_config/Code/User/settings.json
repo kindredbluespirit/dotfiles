@@ -40,5 +40,6 @@
     "security.workspace.trust.enabled": false,
     "git.confirmSync": false,
     "editor.unicodeHighlight.invisibleCharacters": false,
-    "window.zoomLevel": 1
+    "window.zoomLevel": 1,
+    "terminal.integrated.shellIntegration.enabled": false
 }

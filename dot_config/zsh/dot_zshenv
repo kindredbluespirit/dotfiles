@@ -101,6 +101,9 @@ path=($GOROOT/bin $GOPATH/bin $path)
 ## R
 export R_LIBS_USER=$XDG_DATA_HOME/R
 
+## dotnet
+path=(~/.dotnet $path)
+
 # flutter
 path=($HOME/.flutter.d/bin $path)
 

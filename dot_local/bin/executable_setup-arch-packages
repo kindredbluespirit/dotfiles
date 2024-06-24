@@ -92,7 +92,6 @@ patchelf
 
 # pipewire
 pipewire-pulse
-pipewire-alsa
 # pulseaudio
 pavucontrol
 pamixer

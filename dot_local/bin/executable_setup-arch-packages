@@ -5,7 +5,9 @@
 level=${1:-0}
 
 ## yay
-[ -n `pacman -Qq yay-bin` ] || {
+pacman -Qq yay-bin >/dev/null 2>&1
+# [ -n `pacman -Qq yay-bin` ] || {
+[ 0 -eq $? ] || {
     tempdir=~/.cache/tempdir-398282
     rm -rf $tempdir
     mkdir -p $tempdir
@@ -92,7 +94,6 @@ patchelf
 
 # pipewire
 pipewire-pulse
-pipewire-alsa
 # pulseaudio
 pavucontrol
 pamixer

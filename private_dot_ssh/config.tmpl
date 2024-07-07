@@ -1,3 +1,8 @@
+## https://superuser.com/a/1542689/1106531
+# Match all
+## Put at the top to avoid too many auth failures
+Include ~/.ssh/config.d/* 
+
 {{ range $_, $name := list "user" "kindredbluespirit" "onetruffle" "saitarun-vsi" -}}
 {{ if eq $name "kindredbluespirit" -}}
 Host gitlab.com
@@ -47,7 +52,3 @@ Host hf-{{- $name }}
     IdentityFile ~/.ssh/{{- $name }}
 
 {{ end -}}
-
-# https://superuser.com/a/1542689/1106531
-Match all
-Include ~/.ssh/config.d/* 

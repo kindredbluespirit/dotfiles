@@ -20,5 +20,10 @@
 
 	// Unique id used for correlating crash reports sent from this instance.
 	// Do not edit this value.
-	"crash-reporter-id": "7ef39f55-1f97-4133-be46-898897a1a0ca"
+	"crash-reporter-id": "7ef39f55-1f97-4133-be46-898897a1a0ca",
+
+    // enable the REH remote-oss extension
+    "enable-proposed-api": [
+        "xaberus.remote-oss"
+    ]
 }

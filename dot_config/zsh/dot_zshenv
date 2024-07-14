@@ -121,9 +121,11 @@ export TERMINFO=/usr/share/terminfo # helps with a few problems like the backspa
 export NLTK_DATA=$XDG_DATA_HOME/nltk_data
 
 # android
+ANDROID_HOME=$HOME/.android-sdk
 path=(
     $HOME/.android-studio/bin
-    $HOME/.android-sdk/{emulator,{tools/,}bin,platform-tools}
+    # $HOME/.android-sdk/{emulator,{tools/,}bin,platform-tools}
+    $HOME/.android-sdk/cmdline-tools/bin
     $path
 )
 

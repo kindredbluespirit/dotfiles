@@ -125,7 +125,7 @@ ANDROID_HOME=$HOME/.android-sdk
 path=(
     $HOME/.android-studio/bin
     # $HOME/.android-sdk/{emulator,{tools/,}bin,platform-tools}
-    $HOME/.android-sdk/cmdline-tools/bin
+    $HOME/.android-sdk/cmdline-tools/latest/bin
     $path
 )
 

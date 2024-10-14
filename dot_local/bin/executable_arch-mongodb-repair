@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+
+## https://wiki.archlinux.org/title/MongoDB#MongoDB_will_not_start
+
+## remove mongod.lock
+mongod --dbpath /var/lib/mongodb/ --repair
+
+## change ownership of database
+chown -R mongodb: /var/{log,lib}/mongodb/
+

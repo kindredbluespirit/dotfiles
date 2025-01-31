@@ -1,0 +1,26 @@
+[$Version]
+update_info=kwinrules.upd:replace-placement-string-to-enum,kwinrules.upd:use-virtual-desktop-ids
+
+[1]
+Description=Settings for *
+noborder=true
+noborderrule=2
+wmclass=*
+
+[46cdc64a-efd9-438b-8935-e1de22d8b7c7]
+Description=Settings for *
+noborder=true
+noborderrule=2
+types=1
+wmclass=*
+
+[66044d1d-535c-4510-a9dc-2e48ca5e2610]
+Description=No window decorations
+noborder=true
+noborderrule=2
+wmclass=.*
+wmclasscomplete=true
+
+[General]
+count=1
+rules=1

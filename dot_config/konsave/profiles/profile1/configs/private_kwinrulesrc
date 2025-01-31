@@ -1,0 +1,16 @@
+[$Version]
+update_info=kwinrules.upd:replace-placement-string-to-enum,kwinrules.upd:use-virtual-desktop-ids
+
+[1]
+Description=New window settings
+noborder=true
+noborderrule=2
+
+[General]
+count=1
+rules=1
+
+[f0f2a11b-f8db-4374-b0b0-fd3351e665f0]
+Description=New window settings
+noborder=true
+noborderrule=2

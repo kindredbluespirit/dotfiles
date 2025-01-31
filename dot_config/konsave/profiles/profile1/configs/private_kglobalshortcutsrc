@@ -86,6 +86,11 @@ Reboot Without Confirmation=none,,Reboot Without Confirmation
 Shut Down=none,,Shut Down
 _k_friendly_name=Session Management
 
+[ktorrent]
+_k_friendly_name=KTorrent
+queue_suspend=Alt+Shift+P,Alt+Shift+P,Suspend Torrents
+show_kt=Alt+Shift+T,Alt+Shift+T,Show/Hide KTorrent
+
 [kwin]
 Activate Window Demanding Attention=Meta+Ctrl+A,Meta+Ctrl+A,Activate Window Demanding Attention
 Cycle Overview=none,none,Cycle through Overview and Grid View
@@ -315,11 +320,8 @@ _launch=Alt+F2\tSearch\tAlt+Space
 [services][rofi.desktop]
 _launch=Ctrl+`
 
-[services][shotgun-2.desktop]
-_launch=Meta+Print
-
 [services][shotgun.desktop]
-_launch=Print
+_launch=Meta+Print
 
 [services][xkill.desktop]
 _launch=Meta+Shift+Q

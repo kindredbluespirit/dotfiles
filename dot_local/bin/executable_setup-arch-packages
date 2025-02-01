@@ -73,7 +73,7 @@ plasma-pa
 plasma-nm
 bluedevil
 powerdevil
-power-profiles-daemon
+# power-profiles-daemon
 
 dolphin
 konsole

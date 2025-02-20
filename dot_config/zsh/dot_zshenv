@@ -61,9 +61,9 @@ export DEFAULTSHELL=zsh
 # export GIT_CONFIG_DIR=$XDG_CONFIG_HOME/git
 
 # pyenv (the init command significantly increases the login shell boot delay unless the rehash is disabled)
-export PYENV_SHELL=zsh
-export PYENV_ROOT=$HOME/.pyenv
-command -v pyenv >/dev/null || path=($PYENV_ROOT/bin $PYENV_ROOT/shims $path)
+# export PYENV_SHELL=zsh
+# export PYENV_ROOT=$HOME/.pyenv
+# command -v pyenv >/dev/null || path=($PYENV_ROOT/bin $PYENV_ROOT/shims $path)
 
 # node
 export NPM_CONFIG_PREFIX=$HOME/.node

@@ -1,0 +1,10 @@
+tempdir=~/.cache/tempdir-398282
+rm -rf $tempdir
+mkdir -p $tempdir
+pushd $tempdir
+git clone https://aur.archlinux.org/yay-bin
+pushd yay-bin
+makepkg -si
+popd
+popd
+rm -rf $tempdir

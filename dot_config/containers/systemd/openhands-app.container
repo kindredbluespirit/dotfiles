@@ -1,13 +1,12 @@
 [Container]
 Image=docker.all-hands.dev/all-hands-ai/runtime:0.33-nikolaik
 ContainerName=openhands-app
-PublishPort=3000:8081
-Volume=/var/run/docker.sock:/run/user/1000/podman/podman.sock
-Volume=~/.openhands-state:/.openhands-state
+PublishPort=3001:3000
+Volume=/run/user/1000/podman/podman.sock:/var/run/docker.sock
+Volume=/home/user/.openhands-state:/.openhands-state
 AddHost=host.docker.internal:host-gateway
 Environment=SANDBOX_RUNTIME_CONTAINER_IMAGE=docker.all-hands.dev/all-hands-ai/runtime:0.33-nikolaik
 Environment=LOG_ALL_EVENTS=true
-Environment=DOCKER_HOST=unix:///run/user/1000/podman/podman.sock
 
 # [Service]
 # Restart=always

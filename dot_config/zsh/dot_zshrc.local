@@ -16,7 +16,12 @@ REMOTE=$XDG_CONFIG_HOME/common/remote.sh
 # [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 ## fnm (fast nodejs version manager)
-eval "$(fnm env --use-on-cd --shell zsh)"
+# eval "$(fnm env --use-on-cd --shell zsh)"
+FNM_PATH="/home/user/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="/home/user/.local/share/fnm:$PATH"
+  eval "`fnm env`"
+fi
 
 ## ROS
 # export ROS_DOMAIN_ID=42

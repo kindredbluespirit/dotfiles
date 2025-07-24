@@ -13,3 +13,4 @@ git config --local credential.helper "store --file=$GIT_DIR/credentials"
 git config --local core.sshCommand "ssh -F ~/.ssh/config"
 
 git config pull.rebase false
+git config core.fileMode false

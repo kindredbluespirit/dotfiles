@@ -41,5 +41,7 @@
     "git.confirmSync": false,
     "editor.unicodeHighlight.invisibleCharacters": false,
     "window.zoomLevel": 1,
-    "terminal.integrated.shellIntegration.enabled": false
+    "terminal.integrated.shellIntegration.enabled": false,
+    "remote.autoForwardPortsSource": "hybrid",
+    "terminal.integrated.gpuAcceleration": "off"
 }

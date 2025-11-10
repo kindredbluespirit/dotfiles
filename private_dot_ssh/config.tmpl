@@ -3,7 +3,13 @@
 ## Put at the top to avoid too many auth failures
 Include ~/.ssh/config.d/* 
 
-{{ range $_, $name := list "user" "kindredbluespirit" "onetruffle" "saitarun-vsi" -}}
+{{ range $_, $name := list "user" "t3n-dev" "kindredbluespirit" "onetruffle" "saitarun-vsi" -}}
+{{ if eq $name "user" -}}
+Host aur.archlinux.org
+    User aur
+    IdentityFile ~/.ssh/{{- $name }}
+
+{{ end -}}
 {{ if eq $name "kindredbluespirit" -}}
 Host gitlab.com
     User git
@@ -15,10 +21,6 @@ Host github.com
 
 Host codeberg.org
     User git
-    IdentityFile ~/.ssh/{{- $name }}
-
-Host aur.archlinux.org
-    User aur
     IdentityFile ~/.ssh/{{- $name }}
 
 Host hf.co

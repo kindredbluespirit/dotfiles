@@ -3,7 +3,7 @@
 ## Put at the top to avoid too many auth failures
 Include ~/.ssh/config.d/* 
 
-{{ range $_, $name := list "user" "t3n-dev" "kindredbluespirit" "onetruffle" "saitarun-vsi" -}}
+{{ range $_, $name := list "user" "t3n-dev" "kindredbluespirit" "onetruffle" "o3" -}}
 {{ if eq $name "user" -}}
 Host aur.archlinux.org
     User aur

@@ -43,5 +43,8 @@
     "window.zoomLevel": 1,
     "terminal.integrated.shellIntegration.enabled": false,
     "remote.autoForwardPortsSource": "hybrid",
-    "terminal.integrated.gpuAcceleration": "off"
+    "terminal.integrated.gpuAcceleration": "off",
+    "aws.telemetry": false,
+    "npm.packageManager": "pnpm",
+    "editor.tabSize": 2
 }

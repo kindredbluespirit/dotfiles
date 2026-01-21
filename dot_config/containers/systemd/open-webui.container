@@ -8,5 +8,5 @@ Volume=open-webui:/app/backend/data
 # [Service]
 # Restart=always
 
-[Install]
-WantedBy=default.target
+# [Install]
+# WantedBy=default.target

@@ -10,4 +10,5 @@ for message in $@
 do args=($args -m $message)
 done
 
-git commit --date="$(date --utc +%Y-%m-%dT%H:%M:%S%z)" -a --allow-empty-message ${args:--m ""}
+# git commit --date="$(date --utc +%Y-%m-%dT%H:%M:%S%z)" -a --allow-empty-message ${args:--m ""}
+git commit -a --allow-empty-message ${args:--m ""}

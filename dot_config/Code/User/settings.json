@@ -46,5 +46,7 @@
     "terminal.integrated.gpuAcceleration": "off",
     "aws.telemetry": false,
     "npm.packageManager": "pnpm",
-    "editor.tabSize": 2
+    "editor.tabSize": 2,
+    "window.titleBarStyle": "native",
+    "window.customTitleBarVisibility": "never"
 }

@@ -117,7 +117,8 @@ sxhkd
 tint2
 # ttf-icomoon-feather
 ttf-material-design-icons
-oreo-cursors-git
+# oreo-cursors-git
+oreo-cursors-bin
 rofi
 
 ## for adwaita-dark

@@ -1,4 +1,4 @@
-tempdir=~/.cache/tempdir-398282
+tempdir=~/.cache/tempdir-yay
 rm -rf $tempdir
 mkdir -p $tempdir
 pushd $tempdir

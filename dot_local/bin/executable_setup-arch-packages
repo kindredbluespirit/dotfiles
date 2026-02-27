@@ -1,0 +1,13 @@
+#!/bin/env zsh
+
+## enable errexit
+## exit if a command fails
+set -e
+
+## bootstrap/pacstrap zsh, git, fakeroot, archlinux-keyring
+
+packages=(
+
+)
+
+yay -S --noconfirm $packages

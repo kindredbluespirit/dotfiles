@@ -24,7 +24,7 @@
     "update.showReleaseNotes": false,
     "update.mode": "none",
     "json.schemaDownload.enable": false,
-    "extensions.autoUpdate": false,
+    "extensions.autoUpdate": "off",
     "extensions.autoCheckUpdates": false,
     "npm.fetchOnlinePackageInfo": false,
     "workbench.settings.enableNaturalLanguageSearch": false,
@@ -48,5 +48,6 @@
     "npm.packageManager": "pnpm",
     "editor.tabSize": 2,
     "window.titleBarStyle": "native",
-    "window.customTitleBarVisibility": "never"
+    "window.customTitleBarVisibility": "never",
+    "workbench.colorTheme": "Dark Modern"
 }

@@ -2,7 +2,8 @@
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (package-initialize)
-;; (package-refresh-contents t)
+(unless package-archive-contents
+  (package-refresh-contents t))
 
 ;; ;; evil mode
 ;; (unless (package-installed-p 'evil)
@@ -12,12 +13,6 @@
 
 
 ;; (require 'use-package)
-
-;; ;; vscode dark theme
-;; (use-package vscode-dark-plus-theme
-;;   :ensure t
-;;   :config
-;;   (load-theme 'vscode-dark-plus t))
 
 ;; (use-package doom-themes
 ;;   :ensure t
@@ -40,22 +35,23 @@
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; manual management (backup in case melpa gives any trouble)
+;; external packages (MELPA)
 
 ;; evil-mode
-(add-to-list 'load-path (concat user-emacs-directory "evil"))
+(unless (package-installed-p 'evil)
+  (package-install 'evil))
 (require 'evil)
 (evil-mode 1)
 
 ;; set theme
-(add-to-list 'custom-theme-load-path (concat user-emacs-directory "themes"))
-(load-theme 'vscode-dark-plus t)
-
-;; ;; doom emacs themes
-;; (add-to-list 'custom-theme-load-path (concat user-emacs-directory "emacs-doom-themes/themes"))
+(unless (package-installed-p 'doom-themes)
+  (package-install 'doom-themes))
+(require 'doom-themes)
+(load-theme 'doom-dark+ t)
 
 ;; simpleclip
-(add-to-list 'load-path (concat user-emacs-directory "simpleclip"))
+(unless (package-installed-p 'simpleclip)
+  (package-install 'simpleclip))
 (require 'simpleclip)
 (simpleclip-mode 1)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

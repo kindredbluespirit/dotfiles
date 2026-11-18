@@ -50,5 +50,6 @@
     "window.titleBarStyle": "native",
     "window.customTitleBarVisibility": "never",
     "workbench.colorTheme": "Dark Modern",
-    "terminal.integrated.enableMultiLinePasteWarning": "never"
+    "terminal.integrated.enableMultiLinePasteWarning": "never",
+    "markdown-preview-enhanced.previewColorScheme": "systemColorScheme"
 }

@@ -121,12 +121,14 @@ export TERMINFO=/usr/share/terminfo # helps with a few problems like the backspa
 export NLTK_DATA=$XDG_DATA_HOME/nltk_data
 
 # android
-ANDROID_HOME=$HOME/.android-sdk
+export ANDROID_HOME=$HOME/.android-sdk
+# adb comes from pacman's android-tools, not the SDK's platform-tools (which
+# Gradle's installDebug still uses; both are adb 1.0.41 and share one server).
+path=(${path:#$HOME/.android-sdk/platform-tools*})
 path=(
     $HOME/.android-studio/bin
-    # $HOME/.android-sdk/{emulator,{tools/,}bin,platform-tools}
-    $HOME/.android-sdk/cmdline-tools/bin
-    $HOME/.android-sdk/platform-tools/
+    # $HOME/.android-sdk/{emulator,{tools/,}bin}
+    $HOME/.android-sdk/cmdline-tools/latest/bin
     $path
 )
 

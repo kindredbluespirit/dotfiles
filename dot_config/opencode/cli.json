@@ -2,6 +2,9 @@
   "$schema": "https://opencode.ai/v2/cli.json",
   "keybinds": {
     "agent.cycle": "tab",
-    "prompt.autocomplete.complete": "none"
+    "prompt.autocomplete.complete": "none",
+    "input.delete.to.line.start": "none",
+    "input.undo": "ctrl+u",
+    "input.redo": ["ctrl+y"]
   }
 }
